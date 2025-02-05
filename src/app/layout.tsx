@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import '@/styles/global.css';
-import AppProvider from '@/providers/app.provider';
-import useThemeHook from '@/hooks/theme.hook';
+import AppProvider from '@/providers/AppProvider';
+import ThemeMode from '@/components/ThemeMode';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -24,15 +24,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  useThemeHook();
-
   return (
     <AppProvider>
-      <html lang="en">
-        <body className={`${geistSans.variable} ${geistMono.variable}`}>
-          {children}
-        </body>
-      </html>
+      <ThemeMode>
+        <html lang="en">
+          <body className={`${geistSans.variable} ${geistMono.variable}`}>
+            {children}
+          </body>
+        </html>
+      </ThemeMode>
     </AppProvider>
   );
 }
