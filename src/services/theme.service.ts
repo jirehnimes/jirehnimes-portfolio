@@ -2,17 +2,25 @@
 
 import { useAtom } from 'jotai';
 import { themeModeAtom } from '@/stores/global.store';
-import { THEME_MODE } from '@/constants/global.constants';
+import { LOCAL_STORAGE_KEY } from '@/constants/global.constants';
 
 export default function useThemeService() {
   const [themeMode, setThemeMode] = useAtom(themeModeAtom);
-  const themeModeText = themeMode === true ? THEME_MODE.DARK : THEME_MODE.LIGHT;
 
-  const toggleThemeMode = () => setThemeMode(!themeMode);
+  const checkInLocalStorage = (): boolean =>
+    !!window.localStorage.getItem(LOCAL_STORAGE_KEY.THEME_MODE);
+
+  const toggleThemeMode = (isDark?: boolean) => {
+    if (isDark !== undefined) {
+      setThemeMode(isDark);
+    } else {
+      setThemeMode(!themeMode);
+    }
+  };
 
   return {
     themeMode,
-    themeModeText,
+    checkInLocalStorage,
     toggleThemeMode,
   };
 }

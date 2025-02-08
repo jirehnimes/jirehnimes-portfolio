@@ -2,12 +2,11 @@
 
 import Image from 'next/image';
 import styles from './page.module.css';
-import useThemeService from '@/services/theme.service';
 import useHomeHook from '@/hooks/home.hook';
+import ThemeModeToggleButton from '@/components/ThemeModeToggleButton';
 
 export default function Home() {
-  const { themeModeText, toggleThemeMode } = useThemeService();
-  useHomeHook();
+  const { themeText, toggleThemeMode } = useHomeHook();
 
   return (
     <div className={styles.page}>
@@ -28,8 +27,9 @@ export default function Home() {
         </ol>
       </main>
 
-      <button onClick={toggleThemeMode}>Toggle Dark</button>
-      <h1>{themeModeText}</h1>
+      <button onClick={() => toggleThemeMode()}>Toggle Dark</button>
+      <h1>{themeText}</h1>
+      <ThemeModeToggleButton />
     </div>
   );
 }

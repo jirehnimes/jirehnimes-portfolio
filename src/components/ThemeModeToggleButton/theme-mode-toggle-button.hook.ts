@@ -1,22 +1,29 @@
+'use client';
+
 import { THEME_MODE } from '@/constants/global.constants';
 import useThemeService from '@/services/theme.service';
+import {
+  faMoon,
+  faSun,
+  IconDefinition,
+} from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 
-export default function useHomeHook() {
+export default function useThemeModeToggleButtonHook() {
   const { themeMode, toggleThemeMode } = useThemeService();
 
-  const [themeText, setThemeText] = useState<THEME_MODE>(THEME_MODE.LIGHT);
+  const [themeIcon, setThemeIcon] = useState<IconDefinition>(faSun);
 
   useEffect(() => {
     if (themeMode === true) {
-      setThemeText(THEME_MODE.DARK);
+      setThemeIcon(faMoon);
     } else {
-      setThemeText(THEME_MODE.LIGHT);
+      setThemeIcon(faSun);
     }
   }, [themeMode]);
 
   return {
-    themeText,
+    themeIcon,
     toggleThemeMode,
   };
 }
