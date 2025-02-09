@@ -1,10 +1,9 @@
 import { THEME_MODE } from '@/constants/global.constants';
-import useThemeService from '@/services/theme.service';
 import { useEffect, useState } from 'react';
+import useThemeHook from './theme.hook';
 
 export default function useHomeHook() {
-  const { themeMode, toggleThemeMode } = useThemeService();
-
+  const { themeMode, toggleThemeMode } = useThemeHook();
   const [themeText, setThemeText] = useState<THEME_MODE>(THEME_MODE.LIGHT);
 
   useEffect(() => {

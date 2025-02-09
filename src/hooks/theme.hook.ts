@@ -4,7 +4,7 @@ import { useAtom } from 'jotai';
 import { themeModeAtom } from '@/stores/global.store';
 import { LOCAL_STORAGE_KEY } from '@/constants/global.constants';
 
-export default function useThemeService() {
+export default function useThemeHook() {
   const [themeMode, setThemeMode] = useAtom(themeModeAtom);
 
   const checkInLocalStorage = (): boolean =>

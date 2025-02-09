@@ -1,10 +1,10 @@
 'use client';
 
-import useThemeService from '@/services/theme.service';
+import useThemeHook from '@/hooks/theme.hook';
 import { useEffect, useState } from 'react';
 
 export default function useThemeModeHook() {
-  const { themeMode, checkInLocalStorage, toggleThemeMode } = useThemeService();
+  const { themeMode, checkInLocalStorage, toggleThemeMode } = useThemeHook();
   const [systemTheme, setSystemTheme] = useState<MediaQueryList | undefined>();
 
   const detectTheme = (systemTheme: MediaQueryList) => {
@@ -16,21 +16,21 @@ export default function useThemeModeHook() {
     }
   };
 
+  // Get system theme mode as dark.
   useEffect(() => {
-    // Get system theme mode as dark.
     const _systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
     setSystemTheme(_systemTheme);
   }, []);
 
+  // If theme is not yet stored in local storage, use system settings instead.
   useEffect(() => {
-    // If theme is not yet stored in local storage, use system settings instead.
     if (systemTheme !== undefined && checkInLocalStorage() === false) {
       detectTheme(systemTheme);
     }
   }, [systemTheme]);
 
+  // Detect when user change the theme in system settings.
   useEffect(() => {
-    // Detect when user change the theme in system settings.
     if (systemTheme !== undefined) {
       const eventName: string = 'change';
 
@@ -41,6 +41,18 @@ export default function useThemeModeHook() {
       };
     }
   }, [systemTheme, themeMode]);
+
+  // Update the HTML tag class.
+  useEffect(() => {
+    const HTML_TAG = 'html';
+    const DARK_CLASS = 'dark';
+
+    if (themeMode === true) {
+      document.querySelector(HTML_TAG)?.classList.add(DARK_CLASS);
+    } else {
+      document.querySelector(HTML_TAG)?.classList.remove(DARK_CLASS);
+    }
+  }, [themeMode]);
 
   return {};
 }

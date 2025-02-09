@@ -1,7 +1,6 @@
 'use client';
 
-import { THEME_MODE } from '@/constants/global.constants';
-import useThemeService from '@/services/theme.service';
+import useThemeHook from '@/hooks/theme.hook';
 import {
   faMoon,
   faSun,
@@ -10,8 +9,7 @@ import {
 import { useEffect, useState } from 'react';
 
 export default function useThemeModeToggleButtonHook() {
-  const { themeMode, toggleThemeMode } = useThemeService();
-
+  const { themeMode, toggleThemeMode } = useThemeHook();
   const [themeIcon, setThemeIcon] = useState<IconDefinition>(faSun);
 
   useEffect(() => {
