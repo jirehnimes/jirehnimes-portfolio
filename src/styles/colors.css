@@ -1,4 +1,25 @@
 :root {
-  --primary: #ededed;
-  --dark: #0a0a0a;
+  --white: #ebebeb;
+  --gray300: #707070;
+  --gray500: #5c5c5c;
+  --gray700: #474747;
+  --black: #333333;
+  --blue100: #5ba3ec;
+  --blue300: #368fe7;
+  --blue500: #1976d2;
+  --blue700: #1566b7;
+  --blue900: #115292;
+}
+
+html.dark {
+  --white: #333333;
+  --gray300: #474747;
+  --gray500: #5c5c5c;
+  --gray700: #707070;
+  --black: #ebebeb;
+  --blue100: #1a7adb;
+  --blue300: #1566b7;
+  --blue500: #115292;
+  --blue700: #0d3d6e;
+  --blue900: #092949;
 }

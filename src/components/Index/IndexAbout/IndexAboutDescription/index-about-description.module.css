@@ -1,0 +1,13 @@
+@import url('@/styles/colors.css');
+
+.index-about-description {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 24px;
+  gap: 10px;
+}
+
+.index-about-description h4 {
+  color: var(--black);
+}
