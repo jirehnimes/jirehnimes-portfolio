@@ -1,25 +1,18 @@
 'use client';
 
-import { useState } from 'react';
 import styles from './index-about-working-experiences-row.module.css';
+import { TWorkingExperience } from '@/types/working-experience.type';
+import { useIndexAboutWorkingExperiencesRowHook } from './index-about-working-experiences-row.hook';
 
-enum TOGGLE_MORE_DETAILS {
-  SHOW = '',
-  HIDE = 'more-details__hide',
-}
+type TIndexAboutWorkingExperiencesRowProps = {
+  workingExperience: TWorkingExperience;
+};
 
-export default function IndexAboutWorkingExperiencesRow() {
-  const [showMore, setShowMore] = useState<TOGGLE_MORE_DETAILS>(
-    TOGGLE_MORE_DETAILS.HIDE
-  );
-
-  const toggleMoreDetails = () => {
-    if (showMore === TOGGLE_MORE_DETAILS.SHOW) {
-      setShowMore(TOGGLE_MORE_DETAILS.HIDE);
-    } else {
-      setShowMore(TOGGLE_MORE_DETAILS.SHOW);
-    }
-  };
+export default function IndexAboutWorkingExperiencesRow({
+  workingExperience,
+}: TIndexAboutWorkingExperiencesRowProps) {
+  const { showMore, computeRange, toggleMoreDetails } =
+    useIndexAboutWorkingExperiencesRowHook();
 
   return (
     <div className={styles.row}>
@@ -28,10 +21,19 @@ export default function IndexAboutWorkingExperiencesRow() {
         <div className={styles['main__container']}>
           <div className={styles.logo}></div>
           <div className={styles['main-details']}>
-            <div className={styles['main-details__job-title']}>JOB TITLE</div>
-            <div className={styles['main-details__company']}>COMPANY NAME</div>
+            <div className={styles['main-details__job-title']}>
+              {workingExperience.jobTitle}
+            </div>
+
+            <div className={styles['main-details__company']}>
+              {workingExperience.company.name}
+            </div>
+
             <div className={styles['main-details__range']}>
-              Jan. 01, 2025 - Dec. 31, 2025 (1 year)
+              {computeRange(
+                workingExperience.startDate,
+                workingExperience.endDate
+              )}
             </div>
           </div>
         </div>
