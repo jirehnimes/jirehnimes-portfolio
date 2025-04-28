@@ -22,15 +22,22 @@ export const useIndexAboutWorkingExperiencesRowHook = () => {
     return new Date(parseInt(year), parseInt(month), 0);
   };
 
+  const isPlural = (value: number, sentence: string): string =>
+    value > 1 ? `${sentence}s` : sentence;
+
   const computeTotalYears = (startDate: Date, endDate: Date): string => {
     let months = (endDate.getFullYear() - startDate.getFullYear()) * 12;
     months -= startDate.getMonth();
     months += endDate.getMonth();
-    const monthTotal = months <= 0 ? 0 : months;
-    const yearTotal = monthTotal / 12;
-    const isPlural = yearTotal > 1 ? 's' : '';
+    let monthTotal = months <= 0 ? 0 : months;
+    const yearTotal = Math.floor(monthTotal / 12);
+    monthTotal = monthTotal - yearTotal * 12;
+    const yearStatement =
+      yearTotal > 0 ? `${yearTotal} ${isPlural(yearTotal, 'year')}` : '';
+    const monthStatement =
+      monthTotal > 0 ? ` ${monthTotal} ${isPlural(monthTotal, 'month')}` : '';
 
-    return `${yearTotal} year${isPlural}`;
+    return `${yearStatement}${monthStatement}`.trim();
   };
 
   const computeRange = useMemo(

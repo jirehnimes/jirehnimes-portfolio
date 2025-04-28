@@ -6,3 +6,10 @@ export enum THEME_MODE {
   LIGHT = 'light',
   DARK = 'dark',
 }
+
+export enum SOCIAL_MEDIA {
+  FACEBOOK = 'Facebook',
+  INSTAGRAM = 'Instagram',
+  LINKEDIN = 'LinkedIn',
+  GITHUB = 'Github',
+}

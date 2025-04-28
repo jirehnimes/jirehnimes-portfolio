@@ -1,3 +1,13 @@
-.about {
-  padding: 58px 48px 200px 48px;
+@import url('@/styles/colors.css');
+
+.index-about {
+}
+
+.index-about-description {
+  background-color: var(--blue500);
+  padding: 20px 32px 80px;
+}
+
+.index-about-description h1 {
+  color: var(--white);
 }

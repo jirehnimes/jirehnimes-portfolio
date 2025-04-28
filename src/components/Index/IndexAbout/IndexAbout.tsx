@@ -10,9 +10,11 @@ type IndexAboutType = {
 
 export default function IndexAbout({ sectionStyles }: IndexAboutType) {
   return (
-    <section className={styles.about}>
-      <IndexSectionTitle>ABOUT ME</IndexSectionTitle>
-      <IndexAboutDescription />
+    <section className={styles['index-about']}>
+      <div className={styles['index-about-description']}>
+        <IndexSectionTitle>ABOUT ME</IndexSectionTitle>
+        <IndexAboutDescription />
+      </div>
       <IndexAboutCertifications />
       <IndexAboutWorkingExperiences />
     </section>

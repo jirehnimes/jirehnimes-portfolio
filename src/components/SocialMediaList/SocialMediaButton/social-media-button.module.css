@@ -1,0 +1,9 @@
+@import url('@/styles/colors.css');
+
+.social-media {
+  height: 40px;
+  width: 40px;
+  background-color: var(--blue100);
+  border-radius: 12px;
+  overflow: hidden;
+}
