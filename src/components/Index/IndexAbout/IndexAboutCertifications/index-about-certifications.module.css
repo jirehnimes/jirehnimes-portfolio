@@ -1,0 +1,4 @@
+.container {
+  background-color: var(--white);
+  z-index: 10;
+}

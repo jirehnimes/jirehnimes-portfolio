@@ -7,7 +7,7 @@ import IndexPortfolioCard from './IndexPortfolioCard';
 
 export default function IndexPortfolio() {
   return (
-    <section className={styles.portfolio}>
+    <section className={styles.container}>
       <WavesDivider />
       <div className={styles['portfolio__content']}>
         <IndexSectionTitle>PORTFOLIO</IndexSectionTitle>

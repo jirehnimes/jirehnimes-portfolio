@@ -6,8 +6,8 @@ import styles from './index-about.module.css';
 
 export default function IndexAbout() {
   return (
-    <section className={styles['index-about']}>
-      <div className={styles['index-about-description']}>
+    <section className={styles.container}>
+      <div className={styles.description}>
         <div className="margin-auto">
           <IndexSectionTitle>ABOUT ME</IndexSectionTitle>
           <IndexAboutDescription />

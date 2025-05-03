@@ -1,6 +1,9 @@
-.portfolio {
+.container {
+  position: relative;
   margin: 0;
   padding: 0;
+  background-color: var(--white);
+  z-index: 10;
 }
 
 .portfolio__content {

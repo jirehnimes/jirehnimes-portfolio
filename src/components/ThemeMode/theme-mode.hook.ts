@@ -1,20 +1,23 @@
 'use client';
 
 import useThemeHook from '@/hooks/theme.hook';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 export default function useThemeModeHook() {
   const { themeMode, checkInLocalStorage, toggleThemeMode } = useThemeHook();
   const [systemTheme, setSystemTheme] = useState<MediaQueryList | undefined>();
 
-  const detectTheme = (systemTheme: MediaQueryList) => {
-    // Verify if it's dark mode.
-    if (systemTheme.matches) {
-      toggleThemeMode(true);
-    } else {
-      toggleThemeMode(false);
-    }
-  };
+  const detectTheme = useCallback(
+    (systemTheme: MediaQueryList) => {
+      // Verify if it's dark mode.
+      if (systemTheme.matches) {
+        toggleThemeMode(true);
+      } else {
+        toggleThemeMode(false);
+      }
+    },
+    [toggleThemeMode]
+  );
 
   // Get system theme mode as dark.
   useEffect(() => {
@@ -27,7 +30,7 @@ export default function useThemeModeHook() {
     if (systemTheme !== undefined && checkInLocalStorage() === false) {
       detectTheme(systemTheme);
     }
-  }, [systemTheme]);
+  }, [systemTheme, checkInLocalStorage, detectTheme]);
 
   // Detect when user change the theme in system settings.
   useEffect(() => {
@@ -40,7 +43,7 @@ export default function useThemeModeHook() {
         systemTheme.removeEventListener(eventName, () => {});
       };
     }
-  }, [systemTheme, themeMode]);
+  }, [systemTheme, themeMode, detectTheme]);
 
   // Update the HTML tag class.
   useEffect(() => {

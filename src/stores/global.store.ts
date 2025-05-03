@@ -1,7 +1,8 @@
 'use client';
 
-import { LOCAL_STORAGE_KEY } from '@/constants/global.constants';
+import { atom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
+import { LOCAL_STORAGE_KEY } from '@/constants/global.constants';
 
 export const themeModeAtom = atomWithStorage<boolean>(
   LOCAL_STORAGE_KEY.THEME_MODE,
@@ -9,3 +10,5 @@ export const themeModeAtom = atomWithStorage<boolean>(
   undefined,
   { getOnInit: true }
 );
+
+export const navigationAtom = atom<boolean>(false);
