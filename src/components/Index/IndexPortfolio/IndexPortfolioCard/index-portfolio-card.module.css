@@ -1,0 +1,8 @@
+@import url('@/styles/colors.css');
+
+.portfolio-card {
+  width: 280px;
+  height: 400px;
+  background-color: var(--white);
+  border-radius: 12px;
+}

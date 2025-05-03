@@ -1,0 +1,16 @@
+@import url('@/styles/colors.css');
+
+.index-about-description {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.index-about-description h4 {
+  font-size: 32px;
+  line-height: 34px;
+  font-weight: normal;
+  text-align: center;
+  color: var(--white);
+}

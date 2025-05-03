@@ -1,0 +1,20 @@
+@import url('@/styles/colors.css');
+
+.footer {
+  height: 100%;
+  margin: 0;
+  padding: 48px 48px 128px;
+  background-color: var(--blue900);
+}
+
+.name {
+  display: block;
+}
+
+.name h1 {
+  margin: 0;
+  line-height: 52px;
+  letter-spacing: 0.1em;
+  font-size: 48px;
+  color: var(--white);
+}

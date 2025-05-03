@@ -1,0 +1,8 @@
+@import url('@/styles/colors.css');
+
+.index-blog {
+  /* min-height: 600px; */
+  margin: 0;
+  padding: 0;
+  background-color: var(--blue100);
+}

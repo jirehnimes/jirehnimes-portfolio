@@ -1,35 +1,19 @@
-'use client';
-
-import Image from 'next/image';
+import IndexAbout from '@/components/Index/IndexAbout';
+import IndexBlog from '@/components/Index/IndexBlog';
+import IndexPortfolio from '@/components/Index/IndexPortfolio';
 import styles from './page.module.css';
-import useThemeService from '@/services/theme.service';
-import useHomeHook from '@/hooks/home.hook';
 
 export default function Home() {
-  const { themeModeText, toggleThemeMode } = useThemeService();
-  useHomeHook();
-
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantlys.</li>
-        </ol>
-      </main>
+      {/* prettier-ignore */}
+      <section className={`${styles.section} ${styles.jumbotron}`}>
+        Test
+      </section>
 
-      <button onClick={toggleThemeMode}>Toggle Dark</button>
-      <h1>{themeModeText}</h1>
+      <IndexAbout sectionStyles={styles.section} />
+      <IndexPortfolio sectionStyles={styles.section} />
+      <IndexBlog />
     </div>
   );
 }

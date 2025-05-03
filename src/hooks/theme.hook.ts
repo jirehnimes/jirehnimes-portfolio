@@ -1,23 +1,26 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useAtom } from 'jotai';
+import { themeModeAtom } from '@/stores/global.store';
+import { LOCAL_STORAGE_KEY } from '@/constants/global.constants';
 
 export default function useThemeHook() {
-  console.log('THEME HOOK');
+  const [themeMode, setThemeMode] = useAtom(themeModeAtom);
 
-  useEffect(() => {
-    // Get system theme mode as dark.
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+  const checkInLocalStorage = (): boolean =>
+    !!window.localStorage.getItem(LOCAL_STORAGE_KEY.THEME_MODE);
 
-    systemTheme.addEventListener('change', () => {
-      // Verify if it's dark mode.
-      if (systemTheme.matches) {
-        console.log('Dark');
-      } else {
-        console.log('Light');
-      }
-    });
-  });
+  const toggleThemeMode = (isDark?: boolean) => {
+    if (isDark !== undefined) {
+      setThemeMode(isDark);
+    } else {
+      setThemeMode(!themeMode);
+    }
+  };
 
-  return {};
+  return {
+    themeMode,
+    checkInLocalStorage,
+    toggleThemeMode,
+  };
 }

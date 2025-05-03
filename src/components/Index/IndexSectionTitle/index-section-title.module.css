@@ -1,0 +1,15 @@
+.index-section-title {
+  padding: 40px 0px 60px 0px;
+}
+
+.index-section-title h1 {
+  font-size: 64px;
+  line-height: normal;
+  letter-spacing: 0.12em;
+  text-align: center;
+  margin: 0 !important;
+}
+
+.index-section-title__level-2 h1 {
+  font-size: 54px;
+}
