@@ -16,9 +16,10 @@ export default function IndexAboutWorkingExperiences() {
 
   return (
     <section className={styles.container}>
-      <IndexSectionTitle level={2}>WORKING EXPERIENCES</IndexSectionTitle>
-
-      <div className={styles.experiences}>{workingExperiencesRows}</div>
+      <div className="margin-auto">
+        <IndexSectionTitle level={2}>WORKING EXPERIENCES</IndexSectionTitle>
+        <div className={styles.experiences}>{workingExperiencesRows}</div>
+      </div>
     </section>
   );
 }

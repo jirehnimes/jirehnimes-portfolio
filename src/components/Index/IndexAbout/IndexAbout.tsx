@@ -12,8 +12,10 @@ export default function IndexAbout({ sectionStyles }: IndexAboutType) {
   return (
     <section className={styles['index-about']}>
       <div className={styles['index-about-description']}>
-        <IndexSectionTitle>ABOUT ME</IndexSectionTitle>
-        <IndexAboutDescription />
+        <div className="margin-auto">
+          <IndexSectionTitle>ABOUT ME</IndexSectionTitle>
+          <IndexAboutDescription />
+        </div>
       </div>
       <IndexAboutCertifications />
       <IndexAboutWorkingExperiences />

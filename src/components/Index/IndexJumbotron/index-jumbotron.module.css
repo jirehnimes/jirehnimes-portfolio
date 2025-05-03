@@ -1,0 +1,4 @@
+.index-jumbotron {
+  min-height: 100vh;
+  background-color: var(--gray500);
+}

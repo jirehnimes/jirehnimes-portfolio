@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 32px;
+  z-index: 1000;
+}
+
+.logo-container {
+  height: 60px;
+  width: 60px;
+  background-color: red;
+}
+
+.navigation-container {
+  height: 60px;
+  width: 60px;
+  background-color: red;
+}

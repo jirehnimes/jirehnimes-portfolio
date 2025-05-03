@@ -1,3 +1,4 @@
+@import url('./fonts.css');
 @import url('./colors.css');
 
 html,
@@ -10,7 +11,6 @@ body {
 body {
   display: block;
   gap: 0;
-  max-width: 2560px;
   color: var(--black);
   background-color: var(--white);
   font-family: Arial, Helvetica, sans-serif;
@@ -21,4 +21,9 @@ body {
 button {
   cursor: pointer;
   border: none;
+}
+
+.margin-auto {
+  max-width: 1440px;
+  margin: 0 auto;
 }

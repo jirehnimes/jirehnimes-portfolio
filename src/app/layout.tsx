@@ -1,19 +1,9 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
-import '@/styles/global.css';
 import ThemeMode from '@/components/ThemeMode';
 import FontAwesomeConfig from '@/components/FontAwesomeConfig';
 import Footer from '@/components/Footer';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+import { kanitRegular } from '@/constants/fonts.constants';
+import '@/styles/global.css';
 
 export const metadata: Metadata = {
   title: 'Jireh Nimes',
@@ -32,7 +22,7 @@ export default function RootLayout({
           <FontAwesomeConfig />
         </head>
 
-        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <body className={`${kanitRegular.className}`}>
           {children}
           <Footer />
         </body>
