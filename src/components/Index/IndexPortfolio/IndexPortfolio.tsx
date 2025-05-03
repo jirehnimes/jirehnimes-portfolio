@@ -5,11 +5,7 @@ import IndexSectionTitle from '@/components/Index/IndexSectionTitle';
 import styles from './index-portfolio.module.css';
 import IndexPortfolioCard from './IndexPortfolioCard';
 
-type IndexPortfolioType = {
-  sectionStyles: string;
-};
-
-export default function IndexPortfolio({ sectionStyles }: IndexPortfolioType) {
+export default function IndexPortfolio() {
   return (
     <section className={styles.portfolio}>
       <WavesDivider />

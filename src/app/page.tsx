@@ -13,8 +13,8 @@ export default function Home() {
       <NavigationBar />
       <div className={styles.page}>
         <IndexJumbotron />
-        <IndexAbout sectionStyles={styles.section} />
-        <IndexPortfolio sectionStyles={styles.section} />
+        <IndexAbout />
+        <IndexPortfolio />
         <IndexBlog />
       </div>
     </>
