@@ -3,7 +3,7 @@ import ThemeMode from '@/components/ThemeMode';
 import FontAwesomeConfig from '@/components/FontAwesomeConfig';
 import Footer from '@/components/Footer';
 import { kanitRegular } from '@/constants/fonts.constants';
-import '@/styles/global.css';
+import '@/styles/app.css';
 
 export const metadata: Metadata = {
   title: 'Jireh Nimes',
