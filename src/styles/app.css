@@ -1,4 +1,7 @@
-:root {
+@import url('@/styles/colors.css');
+@import url('@/styles/fonts.css');
+
+/* :root {
   --white: #ebebeb;
   --gray300: #707070;
   --gray500: #5c5c5c;
@@ -17,7 +20,7 @@
   --font-weight-bold: 700;
   --font-weight-extra-bold: 800;
   --font-weight-black: 900;
-}
+} */
 
 html.dark {
   --white: #333333;

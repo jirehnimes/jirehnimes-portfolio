@@ -6,6 +6,7 @@ export default function IndexJumbotron() {
 
   return (
     <section className={styles.container}>
+      <div className={styles.overlay}></div>
       <video className={styles.video} autoPlay muted loop>
         <source src={videoURL} type="video/mp4" />
       </video>
