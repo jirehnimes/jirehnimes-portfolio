@@ -14,11 +14,17 @@
 
 .video {
   position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: auto;
+  left: 50%;
+  top: 50%;
+  height: 120%;
+  width: auto;
   z-index: 0;
+  transform: translate(-50%, -50%);
 }
 
-/* TODO: Handle landscape */
+@media screen and (min-width: 1440px) {
+  .video {
+    width: 120%;
+    height: auto;
+  }
+}

@@ -1,26 +1,6 @@
+@import url('@/styles/breakpoints.css');
 @import url('@/styles/colors.css');
 @import url('@/styles/fonts.css');
-
-/* :root {
-  --white: #ebebeb;
-  --gray300: #707070;
-  --gray500: #5c5c5c;
-  --gray700: #474747;
-  --black: #333333;
-  --blue100: #5ba3ec;
-  --blue300: #368fe7;
-  --blue500: #1976d2;
-  --blue700: #1566b7;
-  --blue900: #115292;
-
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semi-bold: 600;
-  --font-weight-bold: 700;
-  --font-weight-extra-bold: 800;
-  --font-weight-black: 900;
-} */
 
 html.dark {
   --white: #333333;
