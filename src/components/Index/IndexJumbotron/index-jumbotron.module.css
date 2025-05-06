@@ -21,8 +21,8 @@
 
 .content-container {
   position: relative;
-  width: 100%;
   max-width: var(--width-md);
+  padding: 0 32px;
 }
 
 .name,
@@ -35,7 +35,6 @@
 .description {
   position: relative;
   width: 100%;
-  padding: 0 32px;
 }
 
 .firstname,
@@ -43,9 +42,8 @@
   font-size: 100px;
   font-weight: var(--font-weight-semi-bold);
   letter-spacing: 0.12em;
-  line-height: normal;
-  margin: 0;
-  margin-right: 20px;
+  line-height: 80px;
+  margin: 0 20px 12px 0;
 }
 
 .firstname {
@@ -68,7 +66,6 @@
   .lastname {
     font-size: 4rem;
     line-height: 2.4rem;
-    margin-bottom: 12px;
   }
 
   .description p {
