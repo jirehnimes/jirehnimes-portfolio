@@ -11,14 +11,8 @@
   z-index: 1000;
 }
 
-.logo-container {
-  height: 60px;
-  width: 60px;
-  background-color: red;
-}
-
-.navigation-container {
-  height: 60px;
-  width: 60px;
-  background-color: red;
+.action-container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
 }

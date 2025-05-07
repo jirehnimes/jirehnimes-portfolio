@@ -41,3 +41,8 @@ button {
   max-width: 1440px;
   margin: 0 auto;
 }
+
+* {
+  animation-duration: 4s;
+  animation-timing-function: ease;
+}

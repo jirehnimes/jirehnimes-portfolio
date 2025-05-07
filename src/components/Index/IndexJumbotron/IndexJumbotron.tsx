@@ -14,10 +14,7 @@ export default function IndexJumbotron() {
           </div>
 
           <div className={styles.description}>
-            <p>
-              I&apos;m currently a Technical Lead from the Philippines. A
-              full-stack developer and a BS Computer Engineering graduate.
-            </p>
+            <p>A Technical Lead based from the Philippines.</p>
           </div>
         </div>
       </div>
