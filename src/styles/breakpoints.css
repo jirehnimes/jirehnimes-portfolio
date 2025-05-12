@@ -1,4 +1,6 @@
 :root {
+  --width-2xs: 320px;
+  --width-xs: 425px;
   --width-sm: 640px;
   --width-md: 768px;
   --width-lg: 1024px;

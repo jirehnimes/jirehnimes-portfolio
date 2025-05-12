@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import styles from './waves-divider.module.css';
-import anime from 'animejs';
+// import anime from 'animejs';
 
 export default function WavesDivider() {
   const wave1 =
@@ -13,23 +13,23 @@ export default function WavesDivider() {
     'M0,64L48,74.7C96,85,192,107,288,101.3C384,96,480,64,576,74.7C672,85,768,139,864,176C960,213,1056,235,1152,224C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z';
 
   useEffect(() => {
-    anime({
-      targets: '.waves > path',
-      easing: 'linear',
-      duration: 8000,
-      loop: true,
-      d: [
-        { value: wave1 },
-        { value: wave2 },
-        { value: wave3 },
-        { value: wave4 },
-        { value: wave1 },
-        { value: wave2 },
-        { value: wave3 },
-        { value: wave4 },
-        { value: wave1 },
-      ],
-    });
+    // anime({
+    //   targets: '.waves > path',
+    //   easing: 'linear',
+    //   duration: 8000,
+    //   loop: true,
+    //   d: [
+    //     { value: wave1 },
+    //     { value: wave2 },
+    //     { value: wave3 },
+    //     { value: wave4 },
+    //     { value: wave1 },
+    //     { value: wave2 },
+    //     { value: wave3 },
+    //     { value: wave4 },
+    //     { value: wave1 },
+    //   ],
+    // });
   }, []);
 
   return (

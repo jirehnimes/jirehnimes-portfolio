@@ -1,22 +1,24 @@
 'use client';
 
-import { useAtom } from 'jotai';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { navigationAtom } from '@/stores/global.store';
 import styles from './header-navigation-button.module.css';
+import useHeaderNavigationButtonHook from './header-navigation-button.hook';
 
 export default function HeaderNavigationButton() {
-  const [showNavigation, setShowNavigation] = useAtom(navigationAtom);
-
-  const toggleNavigation = () => setShowNavigation(!showNavigation);
+  const { componentRef, toggleIcon, toggleNavigation } =
+    useHeaderNavigationButtonHook();
 
   return (
     <button
+      ref={componentRef}
       className={styles['header-navigation-button']}
       onClick={toggleNavigation}
     >
-      <FontAwesomeIcon icon={faBars} className={styles.icon} />
+      <FontAwesomeIcon icon={toggleIcon} className={`${styles.icon}`} />
+      {/* <FontAwesomeIcon
+        icon={faXmark}
+        className={`${styles.icon} ${styles['icon-xmark']}`}
+      /> */}
     </button>
   );
 }
