@@ -12,3 +12,5 @@ export const themeModeAtom = atomWithStorage<boolean>(
 );
 
 export const navigationAtom = atom<boolean>(false);
+
+export const scrollPositionAtom = atom<number>(0);

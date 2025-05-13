@@ -3,6 +3,7 @@ import ThemeMode from '@/components/ThemeMode';
 import FontAwesomeConfig from '@/components/FontAwesomeConfig';
 import Footer from '@/components/Footer';
 import { kanitRegular } from '@/constants/fonts.constants';
+import ScrollListener from '@/components/ScrollListener';
 import ScrollTopButton from '@/components/ScrollTopButton';
 import Header from '@/components/Header';
 import NavigationBar from '@/components/NavigationBar';
@@ -31,6 +32,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <ScrollTopButton />
+          <ScrollListener />
         </body>
       </html>
     </ThemeMode>
