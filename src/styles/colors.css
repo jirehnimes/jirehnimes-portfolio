@@ -9,17 +9,10 @@
   --blue500: #1976d2;
   --blue700: #1566b7;
   --blue900: #115292;
-}
 
-html.dark {
-  --white: #333333;
-  --gray300: #474747;
-  --gray500: #5c5c5c;
-  --gray700: #707070;
-  --black: #ebebeb;
-  --blue100: #1a7adb;
-  --blue300: #1566b7;
-  --blue500: #115292;
-  --blue700: #0d3d6e;
-  --blue900: #092949;
+  --rgb-white: 235, 235, 235;
+  --rgb-gray300: 112, 112, 112;
+  --rgb-gray500: 92, 92, 92;
+  --rgb-gray700: 71, 71, 71;
+  --rgb-black: 51, 51, 51;
 }

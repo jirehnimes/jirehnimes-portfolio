@@ -1,13 +1,15 @@
-@import url('@/styles/colors.css');
-
-.index-about {
+.container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
 }
 
-.index-about-description {
-  background-color: var(--blue500);
+.description {
   padding: 20px 32px 80px;
+  background-color: var(--blue500);
 }
 
-.index-about-description h1 {
+.description h1 {
   color: var(--white);
 }

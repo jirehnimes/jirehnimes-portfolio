@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 32px;
+  z-index: 1000;
+}
+
+.action-container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.scrolled {
+  background-color: var(--white);
+  box-shadow:
+    0px 0px 20px 4px rgba(var(--rgb-gray500), 0.25),
+    0px 5px 15px rgba(var(--rgb-black), 0.2);
+}

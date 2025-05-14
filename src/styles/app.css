@@ -1,0 +1,61 @@
+@import url('@/styles/breakpoints.css');
+@import url('@/styles/colors.css');
+@import url('@/styles/fonts.css');
+
+html.dark {
+  --white: #333333;
+  --gray300: #474747;
+  --gray500: #5c5c5c;
+  --gray700: #707070;
+  --black: #ebebeb;
+  --blue100: #1a7adb;
+  --blue300: #1566b7;
+  --blue500: #115292;
+  --blue700: #0d3d6e;
+  --blue900: #092949;
+}
+
+*,
+html,
+body {
+  scroll-behavior: smooth !important;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  display: block;
+  gap: 0;
+  min-width: var(--width-2xs);
+  color: var(--black);
+  background-color: var(--white);
+  /* font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+.margin-auto {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+* {
+  animation-duration: 4s;
+  animation-timing-function: ease;
+}
+
+@media screen and (max-width: 320px) {
+  body {
+    overflow-x: scroll;
+  }
+}

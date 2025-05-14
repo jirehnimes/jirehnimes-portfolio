@@ -10,11 +10,10 @@ export default function IndexSectionTitle({
   children,
   level = 1,
 }: IndexSectionTitleProps) {
-  const rootClass = 'index-section-title';
-  const levelClass = `${rootClass}__level-${level}`;
+  const levelClass = `level-${level}`;
 
   return (
-    <div className={`${styles[rootClass]} ${styles[levelClass] || ''}`}>
+    <div className={`${styles['container']} ${styles[levelClass] || ''}`}>
       <h1>{children}</h1>
     </div>
   );

@@ -1,0 +1,25 @@
+.overlay {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--white);
+  opacity: 60%;
+  z-index: 5;
+}
+
+.video {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  height: 120%;
+  width: auto;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width: 1440px) {
+  .video {
+    width: 120%;
+    height: auto;
+  }
+}

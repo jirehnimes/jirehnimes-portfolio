@@ -1,15 +1,31 @@
-.index-section-title {
+.container {
   padding: 40px 0px 60px 0px;
 }
 
-.index-section-title h1 {
-  font-size: 64px;
-  line-height: normal;
+.container h1 {
+  font-size: 48px;
+  font-weight: var(--font-weight-semi-bold);
+  line-height: 50px;
   letter-spacing: 0.12em;
   text-align: center;
   margin: 0 !important;
+  word-wrap: break-word;
 }
 
-.index-section-title__level-2 h1 {
-  font-size: 54px;
+.level-2 h1 {
+  font-size: 40px;
+  line-height: 42px;
+}
+
+/* Mobile Large */
+@media screen and (max-width: 425px) {
+  .container h1 {
+    font-size: 40px;
+    line-height: 42px;
+  }
+
+  .level-2 h1 {
+    font-size: 32px;
+    line-height: 34px;
+  }
 }

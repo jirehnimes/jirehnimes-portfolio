@@ -1,10 +1,10 @@
-@import url('@/styles/colors.css');
-
 .footer {
+  position: relative;
   height: 100%;
   margin: 0;
   padding: 48px 48px 128px;
   background-color: var(--blue900);
+  z-index: 10;
 }
 
 .name {
