@@ -15,6 +15,12 @@ html.dark {
   --blue900: #092949;
 }
 
+*,
+html,
+body {
+  scroll-behavior: smooth !important;
+}
+
 html,
 body {
   margin: 0;
