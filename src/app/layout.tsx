@@ -8,6 +8,7 @@ import ScrollTopButton from '@/components/ScrollTopButton';
 import Header from '@/components/Header';
 import NavigationBar from '@/components/NavigationBar';
 import '@/styles/app.css';
+import ChatBot from '@/components/ChatBot';
 
 export const metadata: Metadata = {
   title: 'Jireh Nimes',
@@ -32,6 +33,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <ScrollTopButton />
+          <ChatBot />
           <ScrollListener />
         </body>
       </html>
