@@ -7,6 +7,7 @@ export default function Footer() {
       <div className={styles.name}>
         <h1>JIREH NIMES</h1>
       </div>
+
       <SocialMediaList />
     </section>
   );

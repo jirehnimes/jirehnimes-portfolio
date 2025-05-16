@@ -45,7 +45,6 @@ export default function useHeaderNavigationButtonHook() {
   useEffect(() => {
     scope.current = createScope({ root: componentRef }).add(() => {
       paths.current = utils.$('path');
-      console.log(paths.current);
     });
 
     return () => scope.current.revert();
