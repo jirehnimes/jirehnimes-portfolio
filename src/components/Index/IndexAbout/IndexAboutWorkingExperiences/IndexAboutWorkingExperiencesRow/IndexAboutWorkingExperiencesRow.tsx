@@ -16,20 +16,20 @@ export default function IndexAboutWorkingExperiencesRow({
 
   return (
     <div className={styles.row}>
-      <div className={styles['main-dummy']}></div>
       <div className={styles.main} onClick={toggleMoreDetails}>
         <div className={styles['main__container']}>
           <div className={styles.logo}></div>
-          <div className={styles['main-details']}>
-            <div className={styles['main-details__job-title']}>
+
+          <div className={styles['main__details']}>
+            <div className={styles['main__details__job-title']}>
               {workingExperience.jobTitle}
             </div>
 
-            <div className={styles['main-details__company']}>
+            <div className={styles['main__details__company']}>
               {workingExperience.company.name}
             </div>
 
-            <div className={styles['main-details__range']}>
+            <div className={styles['main__details__range']}>
               {computeRange(
                 workingExperience.startDate,
                 workingExperience.endDate

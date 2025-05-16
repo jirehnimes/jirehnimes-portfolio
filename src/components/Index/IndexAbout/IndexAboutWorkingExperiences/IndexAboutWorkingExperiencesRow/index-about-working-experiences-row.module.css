@@ -2,23 +2,16 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: var(--white);
   padding: 0 24px;
   border-radius: 12px;
   cursor: pointer;
 }
 
-.main-dummy {
-  width: 100%;
-  height: 220px;
-}
-
 .main {
-  position: absolute;
-  left: 0;
-  top: 0;
   width: 100%;
-  height: 220px;
+  max-width: 1024px;
   padding: 0 22px;
   background-color: var(--white);
   box-sizing: border-box;
@@ -32,7 +25,6 @@
   align-items: flex-start;
   gap: 24px;
   width: 100%;
-  height: 220px;
   padding: 32px 24px;
   border-radius: 12px;
   box-sizing: border-box;
@@ -42,13 +34,13 @@
 }
 
 .logo {
-  width: 148px;
-  height: 148px;
+  width: 60px;
+  height: 60px;
   background-color: var(--blue900);
   border-radius: 12px;
 }
 
-.main-details {
+.main__details {
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -56,33 +48,55 @@
   overflow: hidden;
 }
 
-.main-details__job-title {
-  margin-bottom: 20px;
-  font-size: 48px;
-  font-weight: bold;
-  line-height: 48px;
+.main__details__job-title {
+  margin-bottom: 2px;
+  font-size: 32px;
+  font-weight: var(--font-weight-bold);
+  line-height: 34px;
   letter-spacing: 0.08em;
 }
 
-.main-details__company {
-  margin-bottom: 12px;
-  font-size: 32px;
-  font-weight: bold;
-  line-height: 32px;
+.main__details__company {
+  margin-bottom: 2px;
+  font-size: 26px;
+  font-weight: var(--font-weight-semi-bold);
+  line-height: 28px;
   letter-spacing: 0.08em;
 }
 
-.main-details__range {
-  font-size: 32px;
-  line-height: 32px;
+.main__details__range {
+  font-size: 22px;
+  line-height: 24px;
   letter-spacing: 0.08em;
 }
 
 .more-details {
+  width: 100%;
+  max-width: 1024px;
   padding: 32px 24px;
   border-radius: 0 0 12px 12px;
 }
 
 .more-details__hide {
   display: none;
+}
+
+/* Mobile Large */
+@media screen and (max-width: 425px) {
+  .main__details__job-title {
+    margin-bottom: 2px;
+    font-size: 24px;
+    line-height: 26px;
+  }
+
+  .main__details__company {
+    margin-bottom: 2px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .main__details__range {
+    font-size: 14px;
+    line-height: 16px;
+  }
 }
