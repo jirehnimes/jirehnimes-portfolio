@@ -9,7 +9,7 @@ export default function IndexPortfolio() {
   return (
     <section className={styles.container}>
       <WavesDivider />
-      <div className={styles['portfolio__content']}>
+      <div className={styles['content-container']}>
         <IndexSectionTitle>PORTFOLIO</IndexSectionTitle>
 
         <div className={styles.portfolios}>
