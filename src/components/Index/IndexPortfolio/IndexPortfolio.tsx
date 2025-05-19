@@ -10,7 +10,9 @@ export default function IndexPortfolio() {
     <section className={styles.container}>
       <WavesDivider />
       <div className={styles['content-container']}>
-        <IndexSectionTitle>PORTFOLIO</IndexSectionTitle>
+        <IndexSectionTitle styles={styles['section-title']}>
+          PORTFOLIO
+        </IndexSectionTitle>
 
         <div className={styles.portfolios}>
           <IndexPortfolioCard />

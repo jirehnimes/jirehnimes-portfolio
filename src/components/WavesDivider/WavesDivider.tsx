@@ -14,6 +14,7 @@ export default function WavesDivider() {
       viewBox="0 0 1440 320"
     >
       <path
+        id="path1"
         fill={WAVE_COLOR}
         fillOpacity="1"
         fillRule="evenodd"
@@ -22,6 +23,7 @@ export default function WavesDivider() {
       ></path>
 
       <path
+        id="path2"
         fill={WAVE_COLOR}
         fillOpacity="1"
         fillRule="evenodd"
