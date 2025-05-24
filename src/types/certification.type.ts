@@ -1,5 +1,5 @@
 export type TCertification = {
   name: string;
-  icon: string;
+  image: string;
   url: string;
 };
