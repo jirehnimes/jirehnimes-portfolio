@@ -4,7 +4,7 @@ import {
   animate,
   createScope,
   DOMTargetsArray,
-  JSAnimation,
+  // JSAnimation,
   svg,
   utils,
 } from 'animejs';
