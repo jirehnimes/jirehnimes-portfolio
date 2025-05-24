@@ -18,7 +18,7 @@ export default function IndexAboutWorkingExperiencesRow({
     <div className={styles.row}>
       <div className={styles.main} onClick={toggleMoreDetails}>
         <div className={styles['main__container']}>
-          <div className={styles.logo}></div>
+          {/* <div className={styles.logo}></div> */}
 
           <div className={styles['main__details']}>
             <div className={styles['main__details__job-title']}>

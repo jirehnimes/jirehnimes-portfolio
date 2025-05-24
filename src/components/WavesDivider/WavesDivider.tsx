@@ -4,7 +4,7 @@ import { useWavesDividerHook } from './waves-divider.hook';
 import styles from './waves-divider.module.css';
 
 export default function WavesDivider() {
-  const { componentRef, wave1, wave2 } = useWavesDividerHook();
+  const { WAVE_COLOR, componentRef, wavePaths } = useWavesDividerHook();
 
   return (
     <svg
@@ -14,19 +14,21 @@ export default function WavesDivider() {
       viewBox="0 0 1440 320"
     >
       <path
-        fill="#1976d2"
+        id="path1"
+        fill={WAVE_COLOR}
         fillOpacity="1"
         fillRule="evenodd"
         clipRule="evenodd"
-        d={wave1}
+        d={wavePaths[0]}
       ></path>
 
       <path
-        fill="#1976d2"
+        id="path2"
+        fill={WAVE_COLOR}
         fillOpacity="1"
         fillRule="evenodd"
         clipRule="evenodd"
-        d={wave2}
+        d={wavePaths[1]}
         style={{ opacity: 0 }}
       ></path>
     </svg>

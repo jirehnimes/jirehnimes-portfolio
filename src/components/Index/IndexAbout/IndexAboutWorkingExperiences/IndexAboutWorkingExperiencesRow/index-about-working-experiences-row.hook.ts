@@ -71,6 +71,7 @@ export const useIndexAboutWorkingExperiencesRowHook = () => {
 
         return `${startResult} - ${endResult} (${totalYears})`;
       },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
 

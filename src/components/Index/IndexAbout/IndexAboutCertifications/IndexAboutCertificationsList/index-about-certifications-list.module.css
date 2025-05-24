@@ -1,0 +1,13 @@
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin: 0 32px;
+}
+
+.certificate__image {
+  width: 180px;
+  height: auto;
+}
