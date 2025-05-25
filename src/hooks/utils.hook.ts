@@ -5,7 +5,10 @@ export const formatClasses = (classes: string[]): string =>
         return currentValue;
       }
 
-      return `${previousValue} ${currentValue}`;
+      const appendValue =
+        !!currentValue.trim() === false ? '' : ` ${currentValue}`;
+
+      return `${previousValue}${appendValue}`;
     },
     ''
   );

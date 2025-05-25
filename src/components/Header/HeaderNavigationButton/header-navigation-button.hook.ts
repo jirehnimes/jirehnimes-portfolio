@@ -19,7 +19,6 @@ export default function useHeaderNavigationButtonHook() {
   const paths = useRef<DOMTargetsArray>([]);
   const [showNavigation, setShowNavigation] = useAtom(navigationAtom);
 
-  // const toggleNavigation = () => setShowNavigation(!showNavigation);
   const toggleNavigation = () => {
     const [barsPath, xmarkPath] = paths.current;
     const newValue = !showNavigation;
@@ -31,15 +30,12 @@ export default function useHeaderNavigationButtonHook() {
       duration: 200,
     });
 
-    createTimeline()
-      .sync(fromIconTimeline)
-      .add(toIcon, {
-        opacity: 1,
-        duration: '-=200',
-        onComplete: () => {
-          setShowNavigation(newValue);
-        },
-      });
+    createTimeline().sync(fromIconTimeline).add(toIcon, {
+      opacity: 1,
+      duration: '-=200',
+    });
+
+    setShowNavigation(newValue);
   };
 
   // Anime.js detect all SVG path element.
