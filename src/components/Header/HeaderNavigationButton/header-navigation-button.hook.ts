@@ -1,13 +1,15 @@
 'use client';
 
-import { utils, createScope, DOMTargetsArray, createTimeline } from 'animejs';
-import { useAtom } from 'jotai';
-import { useEffect, useRef, useState } from 'react';
 import {
-  faBars,
-  faXmark,
-  IconDefinition,
-} from '@fortawesome/free-solid-svg-icons';
+  utils,
+  createScope,
+  DOMTargetsArray,
+  createTimeline,
+  animate,
+} from 'animejs';
+import { useAtom } from 'jotai';
+import { useEffect, useRef } from 'react';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { navigationAtom } from '@/stores/global.store';
 
 export default function useHeaderNavigationButtonHook() {
@@ -16,29 +18,28 @@ export default function useHeaderNavigationButtonHook() {
   const scope = useRef<any>(null);
   const paths = useRef<DOMTargetsArray>([]);
   const [showNavigation, setShowNavigation] = useAtom(navigationAtom);
-  const [toggleIcon, setToggleIcon] = useState<IconDefinition>(faBars);
 
   // const toggleNavigation = () => setShowNavigation(!showNavigation);
   const toggleNavigation = () => {
+    const [barsPath, xmarkPath] = paths.current;
     const newValue = !showNavigation;
+    const fromIcon = newValue === true ? barsPath : xmarkPath;
+    const toIcon = newValue === true ? xmarkPath : barsPath;
 
-    const [iconElement] = paths.current;
+    const fromIconTimeline = animate(fromIcon, {
+      opacity: 0,
+      duration: 200,
+    });
 
     createTimeline()
-      .add(iconElement, {
-        opacity: 0,
-        duration: 800,
+      .sync(fromIconTimeline)
+      .add(toIcon, {
+        opacity: 1,
+        duration: '-=200',
         onComplete: () => {
-          if (newValue === true) {
-            setToggleIcon(faXmark);
-          } else {
-            setToggleIcon(faBars);
-          }
+          setShowNavigation(newValue);
         },
-      })
-      .add(iconElement, { opacity: 100, duration: 800 });
-
-    setShowNavigation(newValue);
+      });
   };
 
   // Anime.js detect all SVG path element.
@@ -52,7 +53,8 @@ export default function useHeaderNavigationButtonHook() {
 
   return {
     componentRef,
-    toggleIcon,
+    faBars,
+    faXmark,
     toggleNavigation,
   };
 }
