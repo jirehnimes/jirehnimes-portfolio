@@ -15,10 +15,11 @@ html.dark {
   --blue900: #092949;
 }
 
-*,
-html,
-body {
+* {
+  --scroll-behavior: smooth !important;
   scroll-behavior: smooth !important;
+  animation-duration: 4s;
+  animation-timing-function: ease;
 }
 
 html,
@@ -34,9 +35,8 @@ body {
   min-width: var(--width-2xs);
   color: var(--black);
   background-color: var(--white);
-  /* font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
+  -moz-osx-font-smoothing: grayscale;
 }
 
 button {
@@ -49,9 +49,10 @@ button {
   margin: 0 auto;
 }
 
-* {
-  animation-duration: 4s;
-  animation-timing-function: ease;
+.box-sizing__border-box {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
 }
 
 @media screen and (max-width: 320px) {

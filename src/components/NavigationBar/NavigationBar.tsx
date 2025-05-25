@@ -1,20 +1,23 @@
 'use client';
 
-import { useAtomValue } from 'jotai';
-import { useMemo } from 'react';
-import { navigationAtom } from '@/stores/global.store';
+import { useNavigationBarHook } from './navigation-bar.hook';
 import styles from './navigation-bar.module.css';
+import { formatClasses } from '@/hooks/utils.hook';
+import NavigationBarItem from './NavigationBarItem';
+import { TNavigationBarItem } from '@/types/app.type';
 
 export default function NavigationBar() {
-  const showNavigation = useAtomValue<boolean>(navigationAtom);
-  const hideClass = useMemo(
-    () => (showNavigation === true ? styles.show : ''),
-    [showNavigation]
+  const { NAVIGATION_ITEMS, hideClass } = useNavigationBarHook();
+
+  const navigationBarItems = NAVIGATION_ITEMS.map(
+    (navigationBarItem: TNavigationBarItem, index: number) => (
+      <NavigationBarItem key={index} navigationBarItem={navigationBarItem} />
+    )
   );
 
   return (
-    <section className={`${styles['navigation-bar']} ${hideClass}`}>
-      TEST
+    <section className={formatClasses([styles.section, hideClass])}>
+      {navigationBarItems}
     </section>
   );
 }

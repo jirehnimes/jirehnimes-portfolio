@@ -15,7 +15,7 @@ export default function IndexAboutWorkingExperiences() {
   );
 
   return (
-    <section className={styles.container}>
+    <section id="work-experiences" className={styles.container}>
       <div className="margin-auto">
         <IndexSectionTitle level={2}>WORKING EXPERIENCES</IndexSectionTitle>
         <div className={styles.experiences}>{workingExperiencesRows}</div>

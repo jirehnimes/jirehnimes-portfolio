@@ -1,3 +1,9 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .list {
   display: flex;
   flex-direction: row;
@@ -5,6 +11,7 @@
   justify-content: center;
   gap: 24px;
   margin: 0 32px;
+  width: 100%;
 }
 
 .certificate__image {
