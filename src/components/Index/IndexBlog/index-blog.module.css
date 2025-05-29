@@ -1,8 +1,17 @@
-.index-blog {
+.section {
   position: relative;
-  /* min-height: 600px; */
+  width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0 0 60px;
   background-color: var(--blue100);
   z-index: 10;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 32px;
 }
