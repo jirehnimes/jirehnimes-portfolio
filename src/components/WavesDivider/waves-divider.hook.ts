@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  animate,
-  createScope,
-  DOMTargetsArray,
-  // JSAnimation,
-  svg,
-  utils,
-} from 'animejs';
+import { animate, createScope, DOMTargetsArray, svg, utils } from 'animejs';
 import { useRef, useEffect, useCallback } from 'react';
 
 export const useWavesDividerHook = () => {
@@ -46,6 +39,7 @@ export const useWavesDividerHook = () => {
         },
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Anime.js detect all SVG path element.
