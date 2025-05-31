@@ -1,7 +1,7 @@
 'use client';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesUp } from '@fortawesome/free-solid-svg-icons';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import styles from './scroll-top-button.module.css';
 import { useAtomValue } from 'jotai';
 import { scrollPositionAtom } from '@/stores/global.store';
@@ -22,7 +22,8 @@ export default function ScrollTopButton() {
   return (
     <div className={`${styles.container} ${showClass}`}>
       <button className={styles.button} onClick={handleScrollToTop}>
-        <FontAwesomeIcon icon={faAnglesUp} />
+        <FontAwesomeIcon icon={faChevronUp} />
+        <FontAwesomeIcon icon={faChevronUp} className={styles.arrow2} />
       </button>
     </div>
   );

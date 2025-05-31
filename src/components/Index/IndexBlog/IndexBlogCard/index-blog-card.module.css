@@ -1,6 +1,8 @@
 .card {
+  position: relative;
+  height: 240px;
   width: 280px;
-  height: 400px;
+  max-width: 280px;
   background-color: var(--white);
   border-radius: 8px;
   -webkit-box-shadow:
@@ -16,9 +18,44 @@
 }
 
 .card:hover {
-  cursor: pointer;
   transform: scale(1.05);
   -webkit-box-shadow: 0px 0px 15px rgba(var(--rgb-black), 0.2);
   -moz-box-shadow: 0px 0px 15px rgba(var(--rgb-black), 0.2);
   box-shadow: 0px 0px 15px rgba(var(--rgb-black), 0.2);
+}
+
+.card > a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none !important;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+}
+
+.preview {
+  width: 100%;
+  height: 140px;
+  min-height: 140px;
+  background-color: var(--gray300);
+  border-radius: 8px;
+}
+
+.details {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.details h1 {
+  color: var(--black);
+  margin: 0;
+  padding: 0;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
 }
