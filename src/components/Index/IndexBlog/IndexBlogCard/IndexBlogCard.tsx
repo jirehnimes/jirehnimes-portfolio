@@ -1,11 +1,12 @@
 import { formatClasses } from '@/hooks/utils.hook';
 import styles from './index-blog-card.module.css';
 import { STYLE } from '@/constants/styles.constants';
+import Link from 'next/link';
 
 export default function IndexBlogCard() {
   return (
     <div className={styles.card}>
-      <a href="/#blog">
+      <Link href="/#blog">
         <div
           className={formatClasses([
             STYLE.BOX_SIZING__BORDER_BOX,
@@ -20,7 +21,7 @@ export default function IndexBlogCard() {
             </h1>
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   );
 }
