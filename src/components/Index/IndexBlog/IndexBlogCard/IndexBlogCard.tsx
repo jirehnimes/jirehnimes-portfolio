@@ -5,7 +5,7 @@ import { STYLE } from '@/constants/styles.constants';
 export default function IndexBlogCard() {
   return (
     <div className={styles.card}>
-      <a href="">
+      <a href="/#blog">
         <div
           className={formatClasses([
             STYLE.BOX_SIZING__BORDER_BOX,
