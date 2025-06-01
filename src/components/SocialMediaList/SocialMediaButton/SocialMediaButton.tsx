@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styles from './social-media-button.module.css';
 import Link from 'next/link';
 import { TSocialMedia } from '@/types/social-media.type';
+import styles from './social-media-button.module.css';
 
 type TSocialMediaButtonProps = {
   key?: number;

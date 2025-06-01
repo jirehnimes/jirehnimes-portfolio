@@ -1,11 +1,11 @@
 'use client';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
-import styles from './scroll-top-button.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useAtomValue } from 'jotai';
-import { scrollPositionAtom } from '@/stores/global.store';
 import { useMemo } from 'react';
+import { scrollPositionAtom } from '@/stores/global.store';
+import styles from './scroll-top-button.module.css';
 
 export default function ScrollTopButton() {
   const scrollPosition = useAtomValue(scrollPositionAtom);
