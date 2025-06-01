@@ -7,7 +7,7 @@ export default function SocialMediaList() {
   return (
     <div className={styles['social-media-list']}>
       {socialMedia.map((socialMediaItem: TSocialMedia, index: number) => (
-        <SocialMediaButton key={index} />
+        <SocialMediaButton key={index} socialMedia={socialMediaItem} />
       ))}
     </div>
   );

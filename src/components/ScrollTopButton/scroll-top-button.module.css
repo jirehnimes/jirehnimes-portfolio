@@ -27,6 +27,9 @@
     drop-shadow(0px 5px 12px rgba(var(--rgb-black), 0.6));
   filter: drop-shadow(0px 0px 4px rgba(var(--rgb-gray500), 0.65))
     drop-shadow(0px 5px 12px rgba(var(--rgb-black), 0.6));
+  stroke: var(--blue500);
+  stroke-width: 24px;
+  stroke-opacity: 0.8;
 }
 
 .button:hover {
