@@ -8,11 +8,16 @@ html.dark {
   --gray500: #5c5c5c;
   --gray700: #707070;
   --black: #ebebeb;
-  --blue100: #1a7adb;
+  /* --blue100: #1a7adb;
   --blue300: #1566b7;
   --blue500: #115292;
   --blue700: #0d3d6e;
-  --blue900: #092949;
+  --blue900: #092949; */
+  --blue100: #115292;
+  --blue300: #1566b7;
+  --blue500: #1976d2;
+  --blue700: #368fe7;
+  --blue900: #5ba3ec;
 }
 
 * {
