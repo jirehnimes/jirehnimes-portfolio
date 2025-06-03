@@ -1,7 +1,31 @@
-.social-media {
-  height: 40px;
-  width: 40px;
-  background-color: var(--blue100);
+.button {
+  height: 28px;
+  width: 28px;
+  padding: 0;
+  background-color: transparent;
   border-radius: 8px;
   overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.button a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.button a:active {
+  background-color: green;
+}
+
+.button:hover {
+  transform: scale(1.24);
+}
+
+.icon {
+  height: 100%;
+  width: auto;
+  color: var(--blue100);
 }
