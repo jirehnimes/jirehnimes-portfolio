@@ -12,9 +12,9 @@ export default function SocialMediaButton({
   socialMedia: { icon, url },
 }: TSocialMediaButtonProps) {
   return (
-    <button className={styles['social-media']}>
+    <button className={styles.button}>
       <Link href={url} target="_blank">
-        <FontAwesomeIcon icon={icon} />
+        <FontAwesomeIcon icon={icon} className={styles.icon} />
       </Link>
     </button>
   );
