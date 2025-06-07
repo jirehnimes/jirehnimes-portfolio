@@ -1,5 +1,6 @@
-.logo-container {
+.button {
   height: 52px;
   width: 52px;
-  background-color: var(--black);
+  background-color: transparent;
+  padding: 0;
 }
