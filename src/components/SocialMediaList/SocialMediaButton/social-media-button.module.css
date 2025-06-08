@@ -17,7 +17,7 @@
 }
 
 .button a:active {
-  background-color: green;
+  background-color: transparent;
 }
 
 .button:hover {

@@ -22,3 +22,17 @@
   -moz-box-shadow: 0px 0px 15px rgba(var(--rgb-black), 0.2);
   box-shadow: 0px 0px 15px rgba(var(--rgb-black), 0.2);
 }
+
+@media screen and (orientation: portrait) and (max-width: 425px) {
+  .card {
+    width: 152px;
+    height: 217px;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 375px) {
+  .card {
+    width: 122px;
+    height: 174px;
+  }
+}

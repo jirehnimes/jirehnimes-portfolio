@@ -1,11 +1,15 @@
 'use client';
 
-import { useSetAtom } from 'jotai';
+import { useAtom, useSetAtom } from 'jotai';
 import { useCallback, useEffect } from 'react';
-import { scrollPositionAtom } from '@/stores/global.store';
+import { colorAtomListener, scrollPositionAtom } from '@/stores/global.store';
 
 export const useScrollListenerHook = () => {
   const setScrollPosition = useSetAtom(scrollPositionAtom);
+  const [colorAtom] = colorAtomListener;
+  const [color] = useAtom(colorAtom);
+
+  console.log(color);
 
   const computeScrollPosition = useCallback(
     (targetDOM: Document) => {

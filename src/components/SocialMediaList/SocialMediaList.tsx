@@ -1,7 +1,11 @@
 import { socialMedia } from '@/data/social-media.data';
-import styles from './social-media-list.module.css';
-import SocialMediaButton from './SocialMediaButton';
 import { TSocialMedia } from '@/types/social-media.type';
+import SocialMediaButton from './SocialMediaButton';
+import styles from './social-media-list.module.css';
+
+// type TSocialMediaList = {
+//   color
+// }
 
 export default function SocialMediaList() {
   return (
