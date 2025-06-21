@@ -2,8 +2,11 @@
 
 import { atom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
-import { COLOR, LOCAL_STORAGE_KEY } from '@/constants/global.constants';
-import { atomWithListeners } from './_recipes.store';
+import {
+  COLOR,
+  COLOR_DARK,
+  LOCAL_STORAGE_KEY,
+} from '@/constants/global.constants';
 
 export const themeModeAtom = atomWithStorage<boolean>(
   LOCAL_STORAGE_KEY.THEME_MODE,
@@ -16,4 +19,4 @@ export const navigationAtom = atom<boolean>(false);
 
 export const scrollPositionAtom = atom<number>(0);
 
-export const colorAtomListener = atomWithListeners(COLOR);
+export const colorAtom = atom<typeof COLOR | typeof COLOR_DARK>(COLOR);

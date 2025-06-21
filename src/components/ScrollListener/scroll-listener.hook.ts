@@ -1,15 +1,11 @@
 'use client';
 
-import { useAtom, useSetAtom } from 'jotai';
+import { useSetAtom } from 'jotai';
 import { useCallback, useEffect } from 'react';
-import { colorAtomListener, scrollPositionAtom } from '@/stores/global.store';
+import { scrollPositionAtom } from '@/stores/global.store';
 
 export const useScrollListenerHook = () => {
   const setScrollPosition = useSetAtom(scrollPositionAtom);
-  const [colorAtom] = colorAtomListener;
-  const [color] = useAtom(colorAtom);
-
-  console.log(color);
 
   const computeScrollPosition = useCallback(
     (targetDOM: Document) => {
@@ -23,7 +19,6 @@ export const useScrollListenerHook = () => {
             (scrollTop / (scrollHeight - clientHeight)) * 100
           );
 
-          console.log('Scroll position', position);
           setScrollPosition(position);
         } else {
           console.error("Scrolling element can't be detected.");

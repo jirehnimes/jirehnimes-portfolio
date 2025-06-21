@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
-import ThemeMode from '@/components/ThemeMode';
+import ChatBot from '@/components/ChatBot';
 import FontAwesomeConfig from '@/components/FontAwesomeConfig';
 import Footer from '@/components/Footer';
-import { kanitRegular } from '@/constants/fonts.constants';
-import ScrollListener from '@/components/ScrollListener';
-import ScrollTopButton from '@/components/ScrollTopButton';
 import Header from '@/components/Header';
 import NavigationBar from '@/components/NavigationBar';
+import ScrollListener from '@/components/ScrollListener';
+import ScrollTopButton from '@/components/ScrollTopButton';
+import ThemeMode from '@/components/ThemeMode';
+import { kanitRegular } from '@/constants/fonts.constants';
 import '@/styles/app.css';
-import ChatBot from '@/components/ChatBot';
 
 export const metadata: Metadata = {
   title: 'Jireh Nimes',

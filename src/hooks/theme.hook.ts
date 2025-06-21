@@ -1,8 +1,8 @@
 'use client';
 
 import { useAtom } from 'jotai';
-import { themeModeAtom } from '@/stores/global.store';
 import { LOCAL_STORAGE_KEY } from '@/constants/global.constants';
+import { themeModeAtom } from '@/stores/global.store';
 
 export default function useThemeHook() {
   const [themeMode, setThemeMode] = useAtom<boolean>(themeModeAtom);

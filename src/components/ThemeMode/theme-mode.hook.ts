@@ -1,10 +1,14 @@
 'use client';
 
-import useThemeHook from '@/hooks/theme.hook';
+import { useSetAtom } from 'jotai';
 import { useCallback, useEffect, useState } from 'react';
+import { COLOR, COLOR_DARK } from '@/constants/global.constants';
+import useThemeHook from '@/hooks/theme.hook';
+import { colorAtom } from '@/stores/global.store';
 
 export default function useThemeModeHook() {
   const { themeMode, checkInLocalStorage, toggleThemeMode } = useThemeHook();
+  const setColorAtom = useSetAtom(colorAtom);
   const [systemTheme, setSystemTheme] = useState<MediaQueryList | undefined>();
 
   const detectTheme = useCallback(
@@ -52,10 +56,12 @@ export default function useThemeModeHook() {
 
     if (themeMode === true) {
       document.querySelector(HTML_TAG)?.classList.add(DARK_CLASS);
+      setColorAtom(COLOR_DARK);
     } else {
       document.querySelector(HTML_TAG)?.classList.remove(DARK_CLASS);
+      setColorAtom(COLOR);
     }
-  }, [themeMode]);
+  }, [themeMode, setColorAtom]);
 
   return {};
 }
