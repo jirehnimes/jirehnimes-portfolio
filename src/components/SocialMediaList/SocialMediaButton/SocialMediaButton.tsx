@@ -3,7 +3,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useAtomValue } from 'jotai';
 import Link from 'next/link';
-import { COLOR } from '@/constants/global.constants';
 import { colorAtom } from '@/stores/global.store';
 import { TSocialMedia } from '@/types/social-media.type';
 import styles from './social-media-button.module.css';
