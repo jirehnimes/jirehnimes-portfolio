@@ -1,15 +1,24 @@
 'use client';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ThemeModeToggleButtonDropdown from './ThemeModeToggleButtonDropdown';
 import useThemeModeToggleButtonHook from './theme-mode-toggle-button.hook';
 import styles from './theme-mode-toggle-button.module.css';
 
 export default function ThemeModeToggleButton() {
-  const { themeIcon, toggleThemeMode } = useThemeModeToggleButtonHook();
+  const { themeIcon, showDropdown, toggleDropdown } =
+    useThemeModeToggleButtonHook();
 
   return (
-    <button className={styles.button} onClick={() => toggleThemeMode()}>
-      <FontAwesomeIcon icon={themeIcon} className={styles.icon} />
-    </button>
+    <div className={styles.container}>
+      <button className={styles.button} onClick={toggleDropdown}>
+        <FontAwesomeIcon icon={themeIcon} className={styles.icon} />
+      </button>
+
+      <ThemeModeToggleButtonDropdown
+        show={showDropdown}
+        toggleDropdown={toggleDropdown}
+      />
+    </div>
   );
 }

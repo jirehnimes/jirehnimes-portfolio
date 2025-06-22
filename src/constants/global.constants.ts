@@ -3,6 +3,7 @@ export enum LOCAL_STORAGE_KEY {
 }
 
 export enum THEME_MODE {
+  SYSTEM = 'system',
   LIGHT = 'light',
   DARK = 'dark',
 }

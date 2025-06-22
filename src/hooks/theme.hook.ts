@@ -1,26 +1,23 @@
 'use client';
 
 import { useAtom } from 'jotai';
-import { LOCAL_STORAGE_KEY } from '@/constants/global.constants';
 import { themeModeAtom } from '@/stores/global.store';
+import { TThemeModeAtom } from '@/types/app.type';
 
 export default function useThemeHook() {
-  const [themeMode, setThemeMode] = useAtom<boolean>(themeModeAtom);
-
-  const checkInLocalStorage = (): boolean =>
-    !!window.localStorage.getItem(LOCAL_STORAGE_KEY.THEME_MODE);
+  const [themeMode, setThemeMode] = useAtom<TThemeModeAtom>(themeModeAtom);
 
   const toggleThemeMode = (isDark?: boolean) => {
-    if (isDark !== undefined) {
-      setThemeMode(isDark);
-    } else {
-      setThemeMode(!themeMode);
-    }
+    // if (isDark !== undefined) {
+    //   setThemeMode(isDark);
+    // } else {
+    //   setThemeMode(!themeMode);
+    // }
   };
 
   return {
     themeMode,
-    checkInLocalStorage,
+    setThemeMode,
     toggleThemeMode,
   };
 }

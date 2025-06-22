@@ -2,25 +2,45 @@
 
 import { useSetAtom } from 'jotai';
 import { useCallback, useEffect, useState } from 'react';
-import { COLOR, COLOR_DARK } from '@/constants/global.constants';
+import {
+  COLOR,
+  COLOR_DARK,
+  LOCAL_STORAGE_KEY,
+  THEME_MODE,
+} from '@/constants/global.constants';
 import useThemeHook from '@/hooks/theme.hook';
 import { colorAtom } from '@/stores/global.store';
 
 export default function useThemeModeHook() {
-  const { themeMode, checkInLocalStorage, toggleThemeMode } = useThemeHook();
+  const { themeMode, setThemeMode } = useThemeHook();
   const setColorAtom = useSetAtom(colorAtom);
   const [systemTheme, setSystemTheme] = useState<MediaQueryList | undefined>();
 
+  const checkInLocalStorage = useCallback(
+    (): boolean => !!window.localStorage.getItem(LOCAL_STORAGE_KEY.THEME_MODE),
+    []
+  );
+
   const detectTheme = useCallback(
-    (systemTheme: MediaQueryList) => {
-      // Verify if it's dark mode.
-      if (systemTheme.matches) {
-        toggleThemeMode(true);
+    (systemTheme?: MediaQueryList) => {
+      let isDark = false;
+
+      // Verify if toggled mode is system setting.
+      if (themeMode.mode === THEME_MODE.SYSTEM) {
+        if (systemTheme !== undefined && systemTheme.matches === true) {
+          isDark = true;
+        }
       } else {
-        toggleThemeMode(false);
+        if (themeMode.mode === THEME_MODE.LIGHT) {
+          isDark = false;
+        } else {
+          isDark = true;
+        }
       }
+
+      setThemeMode({ ...themeMode, isDark });
     },
-    [toggleThemeMode]
+    [themeMode, setThemeMode]
   );
 
   // Get system theme mode as dark.
@@ -47,14 +67,14 @@ export default function useThemeModeHook() {
         systemTheme.removeEventListener(eventName, () => {});
       };
     }
-  }, [systemTheme, themeMode, detectTheme]);
+  }, [systemTheme, detectTheme]);
 
   // Update the HTML tag class.
   useEffect(() => {
     const HTML_TAG = 'html';
     const DARK_CLASS = 'dark';
 
-    if (themeMode === true) {
+    if (themeMode.isDark === true) {
       document.querySelector(HTML_TAG)?.classList.add(DARK_CLASS);
       setColorAtom(COLOR_DARK);
     } else {

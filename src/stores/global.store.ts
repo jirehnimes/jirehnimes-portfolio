@@ -6,11 +6,13 @@ import {
   COLOR,
   COLOR_DARK,
   LOCAL_STORAGE_KEY,
+  THEME_MODE,
 } from '@/constants/global.constants';
+import { TThemeModeAtom } from '@/types/app.type';
 
-export const themeModeAtom = atomWithStorage<boolean>(
+export const themeModeAtom = atomWithStorage<TThemeModeAtom>(
   LOCAL_STORAGE_KEY.THEME_MODE,
-  false,
+  { mode: THEME_MODE.SYSTEM, isDark: false },
   undefined,
   { getOnInit: true }
 );
