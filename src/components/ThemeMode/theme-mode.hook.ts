@@ -1,6 +1,6 @@
 'use client';
 
-import { useSetAtom } from 'jotai';
+import { useAtom, useSetAtom } from 'jotai';
 import { useCallback, useEffect, useState } from 'react';
 import {
   COLOR,
@@ -8,11 +8,10 @@ import {
   LOCAL_STORAGE_KEY,
   THEME_MODE,
 } from '@/constants/global.constants';
-import useThemeHook from '@/hooks/theme.hook';
-import { colorAtom } from '@/stores/global.store';
+import { colorAtom, themeModeAtom } from '@/stores/global.store';
 
 export default function useThemeModeHook() {
-  const { themeMode, setThemeMode } = useThemeHook();
+  const [themeMode, setThemeMode] = useAtom(themeModeAtom);
   const setColorAtom = useSetAtom(colorAtom);
   const [systemTheme, setSystemTheme] = useState<MediaQueryList | undefined>();
 
@@ -22,13 +21,18 @@ export default function useThemeModeHook() {
   );
 
   const detectTheme = useCallback(
-    (systemTheme?: MediaQueryList) => {
+    (systemThemeQuery?: MediaQueryList) => {
       let isDark = false;
+      let systemDark = themeMode.systemDark;
 
       // Verify if toggled mode is system setting.
       if (themeMode.mode === THEME_MODE.SYSTEM) {
-        if (systemTheme !== undefined && systemTheme.matches === true) {
+        if (
+          systemThemeQuery !== undefined &&
+          systemThemeQuery.matches === true
+        ) {
           isDark = true;
+          systemDark = true;
         }
       } else {
         if (themeMode.mode === THEME_MODE.LIGHT) {
@@ -38,9 +42,10 @@ export default function useThemeModeHook() {
         }
       }
 
-      setThemeMode({ ...themeMode, isDark });
+      setThemeMode({ ...themeMode, isDark, systemDark });
     },
-    [themeMode, setThemeMode]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [setThemeMode]
   );
 
   // Get system theme mode as dark.

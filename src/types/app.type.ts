@@ -10,4 +10,5 @@ export type TNavigationBarItem = {
 export type TThemeModeAtom = {
   mode: THEME_MODE;
   isDark: boolean;
+  systemDark: boolean;
 };

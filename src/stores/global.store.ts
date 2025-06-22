@@ -12,7 +12,7 @@ import { TThemeModeAtom } from '@/types/app.type';
 
 export const themeModeAtom = atomWithStorage<TThemeModeAtom>(
   LOCAL_STORAGE_KEY.THEME_MODE,
-  { mode: THEME_MODE.SYSTEM, isDark: false },
+  { mode: THEME_MODE.SYSTEM, isDark: false, systemDark: false },
   undefined,
   { getOnInit: true }
 );

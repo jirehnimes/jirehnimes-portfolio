@@ -15,8 +15,15 @@ export default function useThemeModeToggleButtonDropdownHook(
 
   const hideClass = useMemo(() => (show === true ? '' : styles.hide), [show]);
 
-  const selectThemeMode = (_themeMode: THEME_MODE = THEME_MODE.SYSTEM) => {
-    setThemeMode({ ...themeMode, mode: _themeMode });
+  const selectThemeMode = (mode: THEME_MODE = THEME_MODE.SYSTEM) => {
+    if (mode === THEME_MODE.SYSTEM) {
+      setThemeMode({ ...themeMode, mode, isDark: themeMode.systemDark });
+    } else if (mode === THEME_MODE.LIGHT) {
+      setThemeMode({ ...themeMode, mode, isDark: false });
+    } else {
+      setThemeMode({ ...themeMode, mode, isDark: true });
+    }
+
     toggleDropdown();
   };
 
