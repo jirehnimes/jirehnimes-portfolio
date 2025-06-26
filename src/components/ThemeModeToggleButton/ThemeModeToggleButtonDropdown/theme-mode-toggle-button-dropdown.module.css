@@ -1,0 +1,31 @@
+.container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--blue100);
+  border: 2px solid var(--black);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 9000;
+}
+
+.button {
+  height: 52px;
+  width: 52px;
+  padding: 12px;
+  background-color: transparent;
+}
+
+.button:hover {
+  background-color: var(--white);
+}
+
+.icon {
+  width: auto;
+  height: 100%;
+  color: var(--black);
+}
+
+.hide {
+  display: none;
+}

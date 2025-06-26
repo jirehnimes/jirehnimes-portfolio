@@ -1,22 +1,58 @@
 'use client';
 
-import useThemeHook from '@/hooks/theme.hook';
+import { useAtom, useSetAtom } from 'jotai';
 import { useCallback, useEffect, useState } from 'react';
+import {
+  COLOR,
+  COLOR_DARK,
+  LOCAL_STORAGE_KEY,
+  THEME_MODE,
+} from '@/constants/global.constants';
+import { colorAtom, themeModeAtom } from '@/stores/global.store';
 
 export default function useThemeModeHook() {
-  const { themeMode, checkInLocalStorage, toggleThemeMode } = useThemeHook();
+  const [themeMode, setThemeMode] = useAtom(themeModeAtom);
+  const setColorAtom = useSetAtom(colorAtom);
   const [systemTheme, setSystemTheme] = useState<MediaQueryList | undefined>();
 
+  const checkInLocalStorage = useCallback(
+    (): boolean => !!window.localStorage.getItem(LOCAL_STORAGE_KEY.THEME_MODE),
+    []
+  );
+
   const detectTheme = useCallback(
-    (systemTheme: MediaQueryList) => {
-      // Verify if it's dark mode.
-      if (systemTheme.matches) {
-        toggleThemeMode(true);
+    (systemThemeQuery?: MediaQueryList) => {
+      let isDark = false;
+      let systemDark = themeMode.systemDark;
+
+      // Verify if toggled mode is system setting.
+      if (
+        themeMode.mode === THEME_MODE.SYSTEM ||
+        systemThemeQuery !== undefined
+      ) {
+        themeMode.mode = THEME_MODE.SYSTEM;
+
+        if (systemThemeQuery!.matches === true) {
+          isDark = true;
+          systemDark = true;
+        } else {
+          isDark = false;
+          systemDark = false;
+        }
       } else {
-        toggleThemeMode(false);
+        if (themeMode.mode === THEME_MODE.LIGHT) {
+          themeMode.mode = THEME_MODE.LIGHT;
+          isDark = false;
+        } else {
+          themeMode.mode = THEME_MODE.DARK;
+          isDark = true;
+        }
       }
+
+      setThemeMode({ ...themeMode, isDark, systemDark });
     },
-    [toggleThemeMode]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [setThemeMode]
   );
 
   // Get system theme mode as dark.
@@ -43,19 +79,21 @@ export default function useThemeModeHook() {
         systemTheme.removeEventListener(eventName, () => {});
       };
     }
-  }, [systemTheme, themeMode, detectTheme]);
+  }, [systemTheme, detectTheme]);
 
   // Update the HTML tag class.
   useEffect(() => {
     const HTML_TAG = 'html';
     const DARK_CLASS = 'dark';
 
-    if (themeMode === true) {
+    if (themeMode.isDark === true) {
       document.querySelector(HTML_TAG)?.classList.add(DARK_CLASS);
+      setColorAtom(COLOR_DARK);
     } else {
       document.querySelector(HTML_TAG)?.classList.remove(DARK_CLASS);
+      setColorAtom(COLOR);
     }
-  }, [themeMode]);
+  }, [themeMode, setColorAtom]);
 
   return {};
 }

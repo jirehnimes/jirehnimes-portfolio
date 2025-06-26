@@ -14,3 +14,10 @@
   height: 100%;
   color: var(--black);
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+}

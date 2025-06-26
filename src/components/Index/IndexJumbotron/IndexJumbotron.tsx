@@ -1,3 +1,4 @@
+import SocialMediaList from '@/components/SocialMediaList';
 import IndexJumbotronBackground from './IndexJumbotronBackground';
 import styles from './index-jumbotron.module.css';
 
@@ -14,8 +15,14 @@ export default function IndexJumbotron() {
           </div>
 
           <div className={styles.description}>
-            <p>A Technical Lead based from the Philippines.</p>
+            <p>
+              I&apos;m currently a Technical Lead based from the Philippines.
+              Experienced in full stack development for more than 9 years. A BS
+              Computer Engineering graduate. And someone who loves coffee!
+            </p>
           </div>
+
+          <SocialMediaList />
         </div>
       </div>
     </section>

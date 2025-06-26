@@ -24,3 +24,9 @@
   gap: 20px;
   padding: 0 32px;
 }
+
+@media screen and (orientation: portrait) and (max-width: 425px) {
+  .portfolios {
+    gap: 2.8vw;
+  }
+}

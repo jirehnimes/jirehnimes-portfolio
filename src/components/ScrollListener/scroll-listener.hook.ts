@@ -19,7 +19,6 @@ export const useScrollListenerHook = () => {
             (scrollTop / (scrollHeight - clientHeight)) * 100
           );
 
-          console.log('Scroll position', position);
           setScrollPosition(position);
         } else {
           console.error("Scrolling element can't be detected.");

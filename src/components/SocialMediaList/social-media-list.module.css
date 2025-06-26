@@ -1,4 +1,4 @@
-.social-media-list {
+.container {
   display: flex;
   flex-direction: row;
   gap: 12px;
