@@ -26,18 +26,25 @@ export default function useThemeModeHook() {
       let systemDark = themeMode.systemDark;
 
       // Verify if toggled mode is system setting.
-      if (themeMode.mode === THEME_MODE.SYSTEM) {
-        if (
-          systemThemeQuery !== undefined &&
-          systemThemeQuery.matches === true
-        ) {
+      if (
+        themeMode.mode === THEME_MODE.SYSTEM ||
+        systemThemeQuery !== undefined
+      ) {
+        themeMode.mode = THEME_MODE.SYSTEM;
+
+        if (systemThemeQuery!.matches === true) {
           isDark = true;
           systemDark = true;
+        } else {
+          isDark = false;
+          systemDark = false;
         }
       } else {
         if (themeMode.mode === THEME_MODE.LIGHT) {
+          themeMode.mode = THEME_MODE.LIGHT;
           isDark = false;
         } else {
+          themeMode.mode = THEME_MODE.DARK;
           isDark = true;
         }
       }
