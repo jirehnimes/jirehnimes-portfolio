@@ -17,13 +17,11 @@ export default function ThemeModeToggleButtonDropdown({
   show = false,
   toggleDropdown,
 }: TThemeModeToggleButtonDropdownProps) {
-  const { hideClass, selectThemeMode } = useThemeModeToggleButtonDropdownHook(
-    show,
-    toggleDropdown
-  );
+  const { domRef, hideClass, selectThemeMode } =
+    useThemeModeToggleButtonDropdownHook(show, toggleDropdown);
 
   return (
-    <div className={formatClasses([styles.container, hideClass])}>
+    <div ref={domRef} className={formatClasses([styles.container, hideClass])}>
       <button
         className={styles.button}
         onClick={() => selectThemeMode(THEME_MODE.SYSTEM)}

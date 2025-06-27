@@ -40,3 +40,7 @@ export enum COLOR_DARK {
   BLUE_700 = '#368fe7',
   BLUE_900 = '#5ba3ec',
 }
+
+export enum DOCUMENT_EVENT_LISTENER {
+  MOUSEDOWN = 'mousedown',
+}
