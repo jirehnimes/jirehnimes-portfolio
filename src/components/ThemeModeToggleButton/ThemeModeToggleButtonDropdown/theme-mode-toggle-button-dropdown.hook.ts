@@ -35,7 +35,6 @@ export default function useThemeModeToggleButtonDropdownHook(
     (event: MouseEvent) => {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       if (domRef.current && !(domRef.current as any).contains(event.target)) {
-        alert('You clicked outside of me!');
         removeOutsideClickListener(handleOutsideClick);
         toggleDropdown();
       }
