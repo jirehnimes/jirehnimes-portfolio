@@ -3,7 +3,7 @@
 import { faDesktop, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { THEME_MODE } from '@/constants/global.constants';
-import { formatClasses } from '@/hooks/utils.hook';
+import { formatClasses } from '@/utils/common.util';
 import useThemeModeToggleButtonDropdownHook from './theme-mode-toggle-button-dropdown.hook';
 import styles from './theme-mode-toggle-button-dropdown.module.css';
 

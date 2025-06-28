@@ -1,5 +1,6 @@
 'use client';
 
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import {
   utils,
   createScope,
@@ -9,7 +10,6 @@ import {
 } from 'animejs';
 import { useAtom } from 'jotai';
 import { useEffect, useRef } from 'react';
-import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { navigationAtom } from '@/stores/global.store';
 
 export default function useHeaderNavigationButtonHook() {

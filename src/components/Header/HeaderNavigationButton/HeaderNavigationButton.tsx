@@ -1,10 +1,10 @@
 'use client';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styles from './header-navigation-button.module.css';
-import useHeaderNavigationButtonHook from './header-navigation-button.hook';
-import { formatClasses } from '@/hooks/utils.hook';
 import { STYLE } from '@/constants/styles.constants';
+import { formatClasses } from '@/utils/common.util';
+import useHeaderNavigationButtonHook from './header-navigation-button.hook';
+import styles from './header-navigation-button.module.css';
 
 export default function HeaderNavigationButton() {
   const { componentRef, faBars, faXmark, toggleNavigation } =

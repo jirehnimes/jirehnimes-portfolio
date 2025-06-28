@@ -6,6 +6,7 @@ import {
   DOCUMENT_EVENT_LISTENER,
   THEME_MODE,
 } from '@/constants/global.constants';
+import { useUtilsHook } from '@/hooks/utils.hook';
 import { themeModeAtom } from '@/stores/global.store';
 import styles from './theme-mode-toggle-button-dropdown.module.css';
 
@@ -16,20 +17,9 @@ export default function useThemeModeToggleButtonDropdownHook(
 ) {
   const domRef = useRef(null);
   const [themeMode, setThemeMode] = useAtom(themeModeAtom);
+  const { removeOutsideClickListener } = useUtilsHook();
 
   const hideClass = useMemo(() => (show === true ? '' : styles.hide), [show]);
-
-  const removeOutsideClickListener = useCallback(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (targetFunction: (this: Window, ev: MouseEvent) => any) => {
-      window.removeEventListener(
-        DOCUMENT_EVENT_LISTENER.MOUSEDOWN,
-        targetFunction,
-        true
-      );
-    },
-    []
-  );
 
   const handleOutsideClick = useCallback(
     (event: MouseEvent) => {

@@ -1,8 +1,8 @@
-import { certifications } from '@/data/certification.data';
-import styles from './index-about-certifications-list.module.css';
-import { TCertification } from '@/types/certification.type';
 import Image from 'next/image';
-import { formatClasses } from '@/hooks/utils.hook';
+import { certifications } from '@/data/certification.data';
+import { TCertification } from '@/types/certification.type';
+import { formatClasses } from '@/utils/common.util';
+import styles from './index-about-certifications-list.module.css';
 
 export default function IndexAboutCertificationsList() {
   return (
