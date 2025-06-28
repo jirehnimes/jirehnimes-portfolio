@@ -54,6 +54,10 @@
   color: var(--blue500);
 }
 
+.description {
+  margin-bottom: 0.5rem;
+}
+
 .description p {
   margin: 0;
   font-size: 22px;

@@ -21,14 +21,14 @@ export default function SocialMediaButton({
 }: TSocialMediaButtonProps) {
   const globalColor = useAtomValue(colorAtom);
   const [iconColor, setIconColor] = useState<COLOR | COLOR_DARK>(
-    globalColor.WHITE
+    globalColor.BLUE_700
   );
 
   useEffect(() => {
     if (color !== undefined) {
       setIconColor(color);
     } else {
-      setIconColor(globalColor.WHITE);
+      setIconColor(globalColor.BLUE_700);
     }
   }, [color, globalColor]);
 
