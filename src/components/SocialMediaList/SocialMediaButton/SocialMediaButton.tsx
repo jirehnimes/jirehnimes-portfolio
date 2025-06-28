@@ -3,19 +3,34 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useAtomValue } from 'jotai';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { COLOR, COLOR_DARK } from '@/constants/global.constants';
 import { colorAtom } from '@/stores/global.store';
 import { TSocialMedia } from '@/types/social-media.type';
 import styles from './social-media-button.module.css';
 
 type TSocialMediaButtonProps = {
-  key?: number;
   socialMedia: TSocialMedia;
+  key?: number;
+  color?: COLOR | COLOR_DARK;
 };
 
 export default function SocialMediaButton({
   socialMedia: { icon, url },
+  color,
 }: TSocialMediaButtonProps) {
-  const color = useAtomValue(colorAtom);
+  const globalColor = useAtomValue(colorAtom);
+  const [iconColor, setIconColor] = useState<COLOR | COLOR_DARK>(
+    globalColor.WHITE
+  );
+
+  useEffect(() => {
+    if (color !== undefined) {
+      setIconColor(color);
+    } else {
+      setIconColor(globalColor.WHITE);
+    }
+  }, [color, globalColor]);
 
   return (
     <button className={styles.button}>
@@ -23,7 +38,7 @@ export default function SocialMediaButton({
         <FontAwesomeIcon
           icon={icon}
           className={styles.icon}
-          style={{ color: color.BLUE_100 }}
+          style={{ color: iconColor }}
         />
       </Link>
     </button>
