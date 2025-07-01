@@ -1,56 +1,30 @@
 'use client';
 
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
-import {
-  utils,
-  createScope,
-  DOMTargetsArray,
-  createTimeline,
-  animate,
-} from 'animejs';
 import { useAtom } from 'jotai';
-import { useEffect, useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import { navigationAtom } from '@/stores/global.store';
 
 export default function useHeaderNavigationButtonHook() {
   const componentRef = useRef(null);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const scope = useRef<any>(null);
-  const paths = useRef<DOMTargetsArray>([]);
   const [showNavigation, setShowNavigation] = useAtom(navigationAtom);
 
+  const navigationIcon = useMemo(
+    () => (showNavigation === true ? faXmark : faBars),
+    [showNavigation]
+  );
+
   const toggleNavigation = () => {
-    const [barsPath, xmarkPath] = paths.current;
-    const newValue = !showNavigation;
-    const fromIcon = newValue === true ? barsPath : xmarkPath;
-    const toIcon = newValue === true ? xmarkPath : barsPath;
+    if (showNavigation === true) {
+      return setShowNavigation(false);
+    }
 
-    const fromIconTimeline = animate(fromIcon, {
-      opacity: 0,
-      duration: 200,
-    });
-
-    createTimeline().sync(fromIconTimeline).add(toIcon, {
-      opacity: 1,
-      duration: '-=200',
-    });
-
-    setShowNavigation(newValue);
+    return setShowNavigation(true);
   };
-
-  // Anime.js detect all SVG path element.
-  useEffect(() => {
-    scope.current = createScope({ root: componentRef }).add(() => {
-      paths.current = utils.$('path');
-    });
-
-    return () => scope.current.revert();
-  }, []);
 
   return {
     componentRef,
-    faBars,
-    faXmark,
+    navigationIcon,
     toggleNavigation,
   };
 }

@@ -60,16 +60,15 @@ export const useNavigationBarHook = () => {
     (event: MouseEvent) => {
       const domTarget = event.target as HTMLElement | null;
 
-      if (!!domTarget === true) {
-        if (
-          domRef.current &&
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          !(domRef.current as any).contains(domTarget) &&
-          checkIfHeaderNavigationButton(domTarget!.classList) === false
-        ) {
-          removeOutsideClickListener(handleOutsideClick);
-          setShowNavigation(false);
-        }
+      if (
+        domRef.current &&
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        !(domRef.current as any).contains(domTarget) &&
+        !!domTarget === true &&
+        checkIfHeaderNavigationButton(domTarget!.classList) === false
+      ) {
+        removeOutsideClickListener(handleOutsideClick);
+        setShowNavigation(false);
       }
     },
     [setShowNavigation, removeOutsideClickListener]
