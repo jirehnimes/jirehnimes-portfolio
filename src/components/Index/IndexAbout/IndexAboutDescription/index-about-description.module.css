@@ -1,11 +1,11 @@
-.index-about-description {
+.container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
-.index-about-description h4 {
+.container h4 {
   margin: 0;
   font-size: 24px;
   line-height: 28px;
