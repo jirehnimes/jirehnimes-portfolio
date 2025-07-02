@@ -55,6 +55,11 @@ button {
   box-sizing: border-box; /* Opera/IE 8+ */
 }
 
+.hover__scale:hover {
+  transform: scale(1.24);
+  transition: transform 0.2s;
+}
+
 @media screen and (max-width: 320px) {
   body {
     overflow-x: scroll;

@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { COLOR, COLOR_DARK } from '@/constants/global.constants';
 import { colorAtom } from '@/stores/global.store';
 import { TSocialMedia } from '@/types/social-media.type';
+import { formatClasses } from '@/utils/common.util';
 import styles from './social-media-button.module.css';
 
 type TSocialMediaButtonProps = {
@@ -33,7 +34,7 @@ export default function SocialMediaButton({
   }, [color, globalColor]);
 
   return (
-    <button className={styles.button}>
+    <button className={formatClasses([styles.button, 'hover__scale'])}>
       <Link href={url} target="_blank">
         <FontAwesomeIcon
           icon={icon}

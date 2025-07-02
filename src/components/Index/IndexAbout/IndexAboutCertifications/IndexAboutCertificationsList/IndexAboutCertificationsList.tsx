@@ -9,7 +9,7 @@ export default function IndexAboutCertificationsList() {
     <div className={styles.container}>
       <div className={formatClasses([styles.list, 'margin-auto'])}>
         {certifications.map((certification: TCertification, index: number) => (
-          <div key={index}>
+          <div key={index} className="hover__scale">
             <a href={certification.url} target="_blank">
               <Image
                 src={certification.image}
