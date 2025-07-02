@@ -1,13 +1,13 @@
 'use client';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styles from './header-navigation-button.module.css';
-import useHeaderNavigationButtonHook from './header-navigation-button.hook';
-import { formatClasses } from '@/hooks/utils.hook';
 import { STYLE } from '@/constants/styles.constants';
+import { formatClasses } from '@/utils/common.util';
+import useHeaderNavigationButtonHook from './header-navigation-button.hook';
+import styles from './header-navigation-button.module.css';
 
 export default function HeaderNavigationButton() {
-  const { componentRef, faBars, faXmark, toggleNavigation } =
+  const { componentRef, navigationIcon, toggleNavigation } =
     useHeaderNavigationButtonHook();
 
   return (
@@ -19,17 +19,10 @@ export default function HeaderNavigationButton() {
       <div
         className={formatClasses([STYLE.BOX_SIZING__BORDER_BOX, styles.icon])}
       >
-        <FontAwesomeIcon icon={faBars} />
-      </div>
-
-      <div
-        className={formatClasses([
-          STYLE.BOX_SIZING__BORDER_BOX,
-          styles.icon,
-          styles['icon__xmark'],
-        ])}
-      >
-        <FontAwesomeIcon icon={faXmark} className={styles.icon} />
+        <FontAwesomeIcon
+          icon={navigationIcon}
+          className={styles['icon__svg']}
+        />
       </div>
     </button>
   );

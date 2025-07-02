@@ -1,10 +1,10 @@
 'use client';
 
-import styles from './navigation-bar-item.module.css';
-import { STYLE } from '@/constants/styles.constants';
-import { formatClasses } from '@/hooks/utils.hook';
-import { TNavigationBarItem } from '@/types/app.type';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { STYLE } from '@/constants/styles.constants';
+import { TNavigationBarItem } from '@/types/app.type';
+import { formatClasses } from '@/utils/common.util';
+import styles from './navigation-bar-item.module.css';
 
 type TNavigationBarItemProps = {
   key?: number;

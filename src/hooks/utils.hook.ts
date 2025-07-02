@@ -1,14 +1,21 @@
-export const formatClasses = (classes: string[]): string =>
-  classes.reduce(
-    (previousValue: string, currentValue: string, index: number) => {
-      if (index === 0) {
-        return currentValue;
-      }
+import { useCallback } from 'react';
+import { DOCUMENT_EVENT_LISTENER } from '@/constants/global.constants';
 
-      const appendValue =
-        !!currentValue.trim() === false ? '' : ` ${currentValue}`;
-
-      return `${previousValue}${appendValue}`;
+// Stateless Hook
+export const useUtilsHook = () => {
+  const removeOutsideClickListener = useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (targetFunction: (this: Window, ev: MouseEvent) => any) => {
+      window.removeEventListener(
+        DOCUMENT_EVENT_LISTENER.MOUSEDOWN,
+        targetFunction,
+        true
+      );
     },
-    ''
+    []
   );
+
+  return {
+    removeOutsideClickListener,
+  };
+};

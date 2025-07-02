@@ -1,7 +1,7 @@
-import { formatClasses } from '@/hooks/utils.hook';
-import styles from './index-blog-card.module.css';
-import { STYLE } from '@/constants/styles.constants';
 import Link from 'next/link';
+import { STYLE } from '@/constants/styles.constants';
+import { formatClasses } from '@/utils/common.util';
+import styles from './index-blog-card.module.css';
 
 export default function IndexBlogCard() {
   return (
