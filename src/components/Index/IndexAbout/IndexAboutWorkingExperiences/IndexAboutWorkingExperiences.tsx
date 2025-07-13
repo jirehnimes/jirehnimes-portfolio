@@ -9,7 +9,7 @@ export default function IndexAboutWorkingExperiences() {
       <div className="margin-auto">
         <IndexSectionTitle level={2}>WORKING EXPERIENCES</IndexSectionTitle>
 
-        <WorkingExperiencesList />
+        <WorkingExperiencesList limit={3} />
 
         <RedirectButton />
       </div>
