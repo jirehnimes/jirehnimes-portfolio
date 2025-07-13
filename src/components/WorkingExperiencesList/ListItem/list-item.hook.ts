@@ -1,3 +1,5 @@
+'use client';
+
 import { useMemo, useState } from 'react';
 
 enum TOGGLE_MORE_DETAILS {
@@ -5,7 +7,7 @@ enum TOGGLE_MORE_DETAILS {
   HIDE = 'more-details__hide',
 }
 
-export const useIndexAboutWorkingExperiencesRowHook = () => {
+export const useListItemHook = () => {
   const [showMore, setShowMore] = useState<TOGGLE_MORE_DETAILS>(
     TOGGLE_MORE_DETAILS.HIDE
   );

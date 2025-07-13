@@ -44,3 +44,11 @@ export enum COLOR_DARK {
 export enum DOCUMENT_EVENT_LISTENER {
   MOUSEDOWN = 'mousedown',
 }
+
+export enum APP_ROUTE {
+  WORKING_EXPERIENCES = '/working-experiences',
+}
+
+export enum A_TARGET {
+  BLANK = '_blank',
+}

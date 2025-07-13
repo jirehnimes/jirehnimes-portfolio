@@ -1,18 +1,15 @@
 'use client';
 
-import styles from './index-about-working-experiences-row.module.css';
 import { TWorkingExperience } from '@/types/working-experience.type';
-import { useIndexAboutWorkingExperiencesRowHook } from './index-about-working-experiences-row.hook';
+import { useListItemHook } from './list-item.hook';
+import styles from './list-item.module.css';
 
-type TIndexAboutWorkingExperiencesRowProps = {
+type TListItemProps = {
   workingExperience: TWorkingExperience;
 };
 
-export default function IndexAboutWorkingExperiencesRow({
-  workingExperience,
-}: TIndexAboutWorkingExperiencesRowProps) {
-  const { showMore, computeRange, toggleMoreDetails } =
-    useIndexAboutWorkingExperiencesRowHook();
+export default function ListItem({ workingExperience }: TListItemProps) {
+  const { showMore, computeRange, toggleMoreDetails } = useListItemHook();
 
   return (
     <div className={styles.row}>
