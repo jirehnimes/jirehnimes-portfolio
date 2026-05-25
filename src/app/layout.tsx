@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import ChatBot from '@/components/ChatBot';
 import FontAwesomeConfig from '@/components/FontAwesomeConfig';
-import Footer from '@/components/Footer';
+import { Footer } from '@/components/footer';
 import Header from '@/components/Header';
 import NavigationBar from '@/components/NavigationBar';
 import ScrollListener from '@/components/ScrollListener';

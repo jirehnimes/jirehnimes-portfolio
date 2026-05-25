@@ -26,6 +26,11 @@ export enum COLOR {
   BLUE_500 = '#1976d2',
   BLUE_700 = '#1566b7',
   BLUE_900 = '#115292',
+  RED_100 = '#ec5b5b',
+  RED_300 = '#e73636',
+  RED_500 = '#d21919',
+  RED_700 = '#b71515',
+  RED_900 = '#921111',
 }
 
 export enum COLOR_DARK {
@@ -39,6 +44,11 @@ export enum COLOR_DARK {
   BLUE_500 = '#1976d2',
   BLUE_700 = '#368fe7',
   BLUE_900 = '#5ba3ec',
+  RED_100 = '#921111',
+  RED_300 = '#b71515',
+  RED_500 = '#d21919',
+  RED_700 = '#e73636',
+  RED_900 = '#ec5b5b',
 }
 
 export enum DOCUMENT_EVENT_LISTENER {

@@ -1,14 +1,12 @@
+import { FooterHeader } from './footer-header';
 import SocialMediaList from '../SocialMediaList';
 import styles from './footer.module.css';
 
-export default function Footer() {
+export const Footer = () => {
   return (
     <section className={styles.footer}>
-      <div className={styles.name}>
-        <h1>JIREH NIMES</h1>
-      </div>
-
+      <FooterHeader />
       <SocialMediaList />
     </section>
   );
-}
+};
