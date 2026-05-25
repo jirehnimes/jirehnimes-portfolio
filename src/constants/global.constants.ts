@@ -17,6 +17,8 @@ export enum SOCIAL_MEDIA {
 
 export enum COLOR {
   WHITE = '#ebebeb',
+  GRAY_100 = '#c8c8c8',
+  GRAY_200 = '#a0a0a0',
   GRAY_300 = '#707070',
   GRAY_500 = '#5c5c5c',
   GRAY_700 = '#474747',
@@ -35,6 +37,8 @@ export enum COLOR {
 
 export enum COLOR_DARK {
   WHITE = '#333333',
+  GRAY_100 = '#393939',
+  GRAY_200 = '#404040',
   GRAY_300 = '#474747',
   GRAY_500 = '#5c5c5c',
   GRAY_700 = '#707070',
