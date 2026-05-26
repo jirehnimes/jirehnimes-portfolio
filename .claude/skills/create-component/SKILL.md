@@ -15,8 +15,9 @@ Follow the project conventions in [CLAUDE.md](../../../CLAUDE.md).
 ## Requirements
 
 - Use Next.js App Router conventions.
+- Components should be created inside the `src/components` directory or a relevant subdirectory.
 - Default to a server component.
-- Add `'use client';` only when the component needs hooks, browser APIs, Jotai, animation libraries, or DOM access.
+- Add `'use client';` only when the component needs hooks, browser APIs, Jotai, animation libraries, DOM access, or when there are no API requests.
 - Use TypeScript with strict-compatible types.
 - Prefer a folder per component when the component has styles, hooks, or nested subcomponents.
 - Name the component file `$component-name.tsx`.
@@ -29,23 +30,36 @@ Follow the project conventions in [CLAUDE.md](../../../CLAUDE.md).
 - If props are needed, define a `T${component-name}Props` type with a clear exported shape.
 - Reuse existing CSS custom properties and patterns before introducing new hard-coded values.
 
-## Suggested structure
+## Folder Structure
 
-For a styled component, prefer:
-
-- `$target_directory/$component_name/$component_name.tsx`
-- `$target_directory/$component_name/index.ts`
-- `$target_directory/$component_name/component-name.module.css`
+- `src/components/$component-name/index.ts`
+- `src/components/$component-name/$component-name.tsx`
+- `src/components/$component-name/$component-name.module.css` (if styles are needed)
+- `src/components/$component-name/$component-name.hook.ts` (if hooks are needed)
 
 For a tiny wrapper with no styles or siblings, a single `.tsx` file plus `index.ts` is acceptable if it fits surrounding patterns.
 
-## Implementation process
+## Component Structure
 
-1. Inspect nearby components in the target area and match their structure.
-2. Create the minimum set of files needed.
-3. Keep the component API small and composable.
-4. If the request implies copy, layout, or variants, implement only what was asked.
-5. After creating files, validate for TypeScript or lint errors that were introduced.
+- The component should be a functional component using an arrow function.
+
+```tsx
+export const ComponentName = () => {
+  // Component logic and JSX here
+};
+```
+
+## index.ts Format
+
+```ts
+export { ComponentName } from './ComponentName';
+```
+
+## Child Components
+
+- Check the $component-name if the name is prefixed by an existing component, such as `FooterStatusBadge` being a child of `Footer`.
+- If the component is a child of an existing component, place it in a new folder under the parent component, such as `src/components/footer/footer-status-badge/`.
+- If the component is not a child of an existing component, place it in a new folder under `src/components/`, such as `src/components/status-badge/`.
 
 ## Output
 

@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 48px;
+  border-bottom: 1pt solid var(--gray200);
+}
+
+.sitemap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.sitemap h3 {
+  margin: 0;
+  font-weight: normal;
+  color: var(--gray200);
+}
+
+.sitemap ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sitemap ul a {
+  text-decoration: none;
+  color: var(--blue300);
+}
+
+.sitemap ul a:focus-visible {
+  outline: none;
+  text-decoration: underline;
+}

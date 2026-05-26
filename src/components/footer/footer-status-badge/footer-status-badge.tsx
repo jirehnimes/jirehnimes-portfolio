@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './footer-status-badge.module.css';
 
 export const FooterStatusBadge = () => {
