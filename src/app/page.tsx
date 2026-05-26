@@ -1,7 +1,7 @@
-import IndexAbout from '@/components/Index/IndexAbout';
-import IndexBlog from '@/components/Index/IndexBlog';
-import IndexPortfolio from '@/components/Index/IndexPortfolio';
-import IndexJumbotron from '@/components/Index/IndexJumbotron';
+import { IndexAbout } from '@/components/index/index-about';
+import { IndexBlog } from '@/components/index/index-blog';
+import { IndexJumbotron } from '@/components/index/index-jumbotron';
+import { IndexPortfolio } from '@/components/index/index-portfolio';
 import styles from './page.module.css';
 
 export default function Home() {
