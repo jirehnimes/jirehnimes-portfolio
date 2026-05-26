@@ -1,6 +1,6 @@
 'use client';
 
-import WavesDivider from '@/components/WavesDivider';
+import { WavesDivider } from '@/components/waves-divider';
 import IndexSectionTitle from '@/components/Index/IndexSectionTitle';
 import styles from './index-portfolio.module.css';
 import IndexPortfolioCard from './IndexPortfolioCard';
