@@ -2,11 +2,20 @@ import { TWorkingExperience } from '@/types/working-experience.type';
 
 export const workingExperiences: TWorkingExperience[] = [
   {
+    jobTitle: 'Lead Application Developer',
+    company: {
+      name: 'Theoria Medical, Inc.',
+    },
+    startDate: '08/2025',
+    endDate: '06/2026',
+  },
+  {
     jobTitle: 'Technical Lead',
     company: {
       name: 'Cebu Air, Inc. (Cebu Pacific Air)',
     },
     startDate: '08/2023',
+    endDate: '08/2025',
   },
   {
     jobTitle: 'Senior Full Stack Developer',

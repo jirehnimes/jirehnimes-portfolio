@@ -9,6 +9,12 @@
   cursor: pointer;
 }
 
+.row:hover .main__container {
+  box-shadow:
+    0px 0px 20px 4px rgba(91, 163, 236, 0.25),
+    0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 .main {
   width: 100%;
   max-width: 768px;
@@ -55,23 +61,23 @@
 
 .main__details__job-title {
   margin-bottom: 2px;
-  font-size: 32px;
+  font-size: 1.6rem;
   font-weight: var(--font-weight-bold);
-  line-height: 34px;
+  line-height: 1.8rem;
   letter-spacing: 0.08em;
 }
 
 .main__details__company {
   margin-bottom: 2px;
-  font-size: 26px;
+  font-size: 1.2rem;
   font-weight: var(--font-weight-semi-bold);
-  line-height: 28px;
+  line-height: 1.4rem;
   letter-spacing: 0.08em;
 }
 
 .main__details__range {
-  font-size: 22px;
-  line-height: 24px;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
   letter-spacing: 0.08em;
 }
 
