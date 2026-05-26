@@ -1,5 +1,3 @@
-'use client';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { STYLE } from '@/constants/styles.constants';
 import { TNavigationBarItem } from '@/types/app.type';
@@ -7,7 +5,6 @@ import { formatClasses } from '@/utils/common.util';
 import styles from './navigation-bar-item.module.css';
 
 type TNavigationBarItemProps = {
-  key?: number;
   navigationBarItem: TNavigationBarItem;
 };
 

@@ -2,7 +2,7 @@
 
 import { TNavigationBarItem } from '@/types/app.type';
 import { formatClasses } from '@/utils/common.util';
-import NavigationBarItem from './NavigationBarItem';
+import NavigationBarItem from './navigation-bar-item';
 import { useNavigationBarHook } from './navigation-bar.hook';
 import styles from './navigation-bar.module.css';
 

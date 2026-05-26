@@ -10,8 +10,11 @@
   height: 100%;
   max-height: 100vh;
   padding: 124px 32px 32px 12px;
-  background-color: var(--white);
-  box-shadow: -6px -1px 5px 0px rgba(var(--rgb-gray500), 0.25);
+  background: rgba(var(--rgb-white), 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-left: 1px solid rgba(var(--rgb-white), 0.3);
+  box-shadow: -6px 0 24px 0 rgba(var(--rgb-gray500), 0.15);
   z-index: 900;
 }
 
