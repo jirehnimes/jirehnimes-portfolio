@@ -1,4 +1,4 @@
-import SocialMediaList from '@/components/SocialMediaList';
+import { SocialMediaList } from '@/components/social-media-list';
 import IndexJumbotronBackground from './IndexJumbotronBackground';
 import styles from './index-jumbotron.module.css';
 

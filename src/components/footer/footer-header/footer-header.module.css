@@ -1,10 +1,14 @@
 .container {
+  padding: 0 48px 20px;
+  border-bottom: 1pt solid var(--gray200);
+}
+
+.innerContainer {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 8px;
-  padding: 0 48px 48px;
-  border-bottom: 1pt solid var(--gray200);
 }
 
 .titleContainer {
@@ -15,10 +19,18 @@
 
 .title {
   margin: 0;
-  font-size: 48px;
-  line-height: 52px;
+  font-size: 2.2rem;
+  line-height: 2.4rem;
   letter-spacing: 0.1em;
   color: var(--white);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.4rem;
+  color: var(--gray100);
 }
 
 .titleDivider {

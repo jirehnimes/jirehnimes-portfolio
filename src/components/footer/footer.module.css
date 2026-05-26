@@ -2,7 +2,7 @@
   position: relative;
   height: 100%;
   margin: 0;
-  padding: 48px 0 128px 0;
+  padding: 48px 0;
   background-color: var(--blue900);
   z-index: 10;
 }
@@ -18,6 +18,14 @@
   line-height: 52px;
   letter-spacing: 0.1em;
   color: var(--white);
+}
+
+.lastRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 20px 48px;
 }
 
 /* Mobile Large */

@@ -1,9 +1,14 @@
 .container {
   display: flex;
+  border-bottom: 1pt solid var(--gray200);
+}
+
+.sitemapContainer {
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 20px 48px;
-  border-bottom: 1pt solid var(--gray200);
+  width: 100%;
 }
 
 .sitemap {
