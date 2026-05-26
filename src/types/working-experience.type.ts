@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export type TWorkingExperienceCompany = {
   name: string;
 };
@@ -7,4 +9,5 @@ export type TWorkingExperience = {
   company: TWorkingExperienceCompany;
   startDate: string;
   endDate?: string;
+  details?: ReactNode;
 };

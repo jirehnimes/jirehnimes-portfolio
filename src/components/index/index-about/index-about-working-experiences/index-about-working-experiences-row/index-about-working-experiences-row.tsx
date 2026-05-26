@@ -1,6 +1,7 @@
 'use client';
 
 import { TWorkingExperience } from '@/types/working-experience.type';
+import { IndexAboutWorkingExperiencesRowDetails } from './index-about-working-experiences-row-details';
 import { useIndexAboutWorkingExperiencesRowHook } from './index-about-working-experiences-row.hook';
 import styles from './index-about-working-experiences-row.module.css';
 
@@ -11,7 +12,7 @@ type TIndexAboutWorkingExperiencesRowProps = {
 export const IndexAboutWorkingExperiencesRow = ({
   workingExperience,
 }: TIndexAboutWorkingExperiencesRowProps) => {
-  const { showMore, computeRange, toggleMoreDetails } =
+  const { isMoreDetailsVisible, computeRange, toggleMoreDetails } =
     useIndexAboutWorkingExperiencesRowHook();
 
   return (
@@ -37,18 +38,11 @@ export const IndexAboutWorkingExperiencesRow = ({
         </div>
       </div>
 
-      <div className={`${styles['more-details']} ${styles[showMore]}`}>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra
-          laoreet leo, sit amet bibendum neque ullamcorper sit amet. Praesent ac
-          malesuada est. Integer pretium tempor aliquet. Aliquam velit leo,
-          blandit sit amet ultricies sit amet, aliquet vel quam. Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit. In viverra laoreet leo,
-          sit amet bibendum neque ullamcorper sit amet. Praesent ac malesuada
-          est. Integer pretium tempor aliquet. Aliquam velit leo, blandit sit
-          amet ultricies sit amet, aliquet vel quam.
-        </p>
-      </div>
+      <IndexAboutWorkingExperiencesRowDetails
+        details={workingExperience.details}
+        isVisible={isMoreDetailsVisible}
+        onClose={toggleMoreDetails}
+      />
     </div>
   );
 };

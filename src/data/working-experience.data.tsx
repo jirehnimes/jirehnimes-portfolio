@@ -1,22 +1,10 @@
 import { TWorkingExperience } from '@/types/working-experience.type';
+import { data202308CebuPacific } from './working-experience/202308-cebu-pacific.data';
+import { data202508TheoriaMedical } from './working-experience/202508-theoria-medical.data';
 
 export const workingExperiences: TWorkingExperience[] = [
-  {
-    jobTitle: 'Lead Application Developer',
-    company: {
-      name: 'Theoria Medical, Inc.',
-    },
-    startDate: '08/2025',
-    endDate: '06/2026',
-  },
-  {
-    jobTitle: 'Technical Lead',
-    company: {
-      name: 'Cebu Air, Inc. (Cebu Pacific Air)',
-    },
-    startDate: '08/2023',
-    endDate: '08/2025',
-  },
+  data202508TheoriaMedical,
+  data202308CebuPacific,
   {
     jobTitle: 'Senior Full Stack Developer',
     company: {

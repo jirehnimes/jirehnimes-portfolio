@@ -84,7 +84,7 @@ export const useIndexAboutWorkingExperiencesRowHook = () => {
   };
 
   return {
-    showMore,
+    isMoreDetailsVisible: showMore === TOGGLE_MORE_DETAILS.SHOW,
     computeRange,
     toggleMoreDetails,
   };
