@@ -58,3 +58,9 @@ export enum COLOR_DARK {
 export enum DOCUMENT_EVENT_LISTENER {
   MOUSEDOWN = 'mousedown',
 }
+
+export enum PORTFOLIO_TYPE {
+  WEB = 'web',
+  MOBILE = 'mobile',
+  DESKTOP = 'desktop',
+}

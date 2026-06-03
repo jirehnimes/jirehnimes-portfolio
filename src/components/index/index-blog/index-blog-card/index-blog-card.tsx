@@ -15,10 +15,7 @@ export const IndexBlogCard = () => {
         >
           <div className={styles.preview}></div>
           <div className={styles.details}>
-            <h1>
-              Test Title Test Title Test Title Test Title Test Title Test Title
-              Test Title Test Title
-            </h1>
+            <h1>Coming Soon</h1>
           </div>
         </div>
       </Link>
