@@ -1,0 +1,45 @@
+/* Mobile frame — viewport renders at 375×667, scaled down to 148×263px display */
+.mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background-color: #2d2d2d;
+  border: 2px solid #1a1a1a;
+  border-radius: 24px;
+  padding: 12px 6px;
+  width: 160px;
+  flex-shrink: 0;
+}
+
+.mobile__camera {
+  width: 36px;
+  height: 8px;
+  background-color: #1a1a1a;
+  border-radius: 4px;
+}
+
+.mobile__screen {
+  width: 148px;
+  height: 263px;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 4px;
+  position: relative;
+}
+
+.mobile__iframe {
+  width: 375px;
+  height: 667px;
+  border: none;
+  transform: scale(0.3947); /* 148/375 */
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+.mobile__home {
+  width: 36px;
+  height: 4px;
+  background-color: #3d3d3d;
+  border-radius: 2px;
+}

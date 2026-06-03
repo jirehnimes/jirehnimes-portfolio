@@ -1,0 +1,56 @@
+/* Laptop frame — screen renders at 1280px viewport, scaled down to 480px display */
+.laptop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.laptop__lid {
+  width: 480px;
+  background-color: #2d2d2d;
+  border-radius: 8px 8px 0 0;
+  padding: 10px 10px 0 10px;
+  border: 2px solid #1a1a1a;
+  border-bottom: none;
+}
+
+.laptop__screen {
+  width: 460px;
+  height: 288px;
+  overflow: hidden;
+  background-color: #000;
+  border-radius: 4px;
+  position: relative;
+}
+
+.laptop__iframe {
+  width: 1280px;
+  height: 800px;
+  border: none;
+  transform: scale(0.359375); /* 460/1280 */
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+.laptop__base {
+  width: 520px;
+  height: 14px;
+  background: linear-gradient(to bottom, #3d3d3d, #2a2a2a);
+  border-radius: 0 0 4px 4px;
+  border: 2px solid #1a1a1a;
+  border-top: none;
+}
+
+.laptop__foot {
+  width: 220px;
+  height: 6px;
+  background-color: #252525;
+  border-radius: 0 0 6px 6px;
+}
+
+@media screen and (max-width: 600px) {
+  .laptop {
+    display: none;
+  }
+}
