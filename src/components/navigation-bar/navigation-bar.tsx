@@ -6,7 +6,7 @@ import NavigationBarItem from './navigation-bar-item';
 import { useNavigationBarHook } from './navigation-bar.hook';
 import styles from './navigation-bar.module.css';
 
-export default function NavigationBar() {
+export const NavigationBar = () => {
   const { NAVIGATION_ITEMS, domRef, hideClass } = useNavigationBarHook();
 
   const navigationBarItems = NAVIGATION_ITEMS.map(
@@ -23,4 +23,4 @@ export default function NavigationBar() {
       {navigationBarItems}
     </section>
   );
-}
+};

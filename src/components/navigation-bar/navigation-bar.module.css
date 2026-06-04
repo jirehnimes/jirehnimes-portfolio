@@ -1,6 +1,7 @@
 .section {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 12px;
   visibility: hidden;
   position: fixed;
@@ -9,7 +10,7 @@
   bottom: 0;
   height: 100%;
   max-height: 100vh;
-  padding: 124px 32px 32px 12px;
+  padding: 0 32px 0 12px;
   background: rgba(var(--rgb-white), 0.55);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
