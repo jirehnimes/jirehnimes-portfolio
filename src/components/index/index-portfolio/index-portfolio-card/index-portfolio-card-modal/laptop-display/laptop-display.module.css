@@ -49,8 +49,48 @@
   border-radius: 0 0 6px 6px;
 }
 
+@media screen and (max-width: 900px) {
+  .laptop__lid {
+    width: 360px;
+  }
+
+  .laptop__screen {
+    width: 345px;
+    height: 216px;
+  }
+
+  .laptop__iframe {
+    transform: scale(0.26953125); /* 345/1280 */
+  }
+
+  .laptop__base {
+    width: 390px;
+  }
+
+  .laptop__foot {
+    width: 165px;
+  }
+}
+
 @media screen and (max-width: 600px) {
-  .laptop {
-    display: none;
+  .laptop__lid {
+    width: 240px;
+  }
+
+  .laptop__screen {
+    width: 230px;
+    height: 144px;
+  }
+
+  .laptop__iframe {
+    transform: scale(0.1796875); /* 230/1280 */
+  }
+
+  .laptop__base {
+    width: 260px;
+  }
+
+  .laptop__foot {
+    width: 110px;
   }
 }

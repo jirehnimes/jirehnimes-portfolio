@@ -1,0 +1,18 @@
+export enum SKILL {
+  AWS = 'AWS',
+  AZURE = 'Azure',
+  CSS = 'CSS',
+  DOCKER = 'Docker',
+  EXPO = 'Expo',
+  GIT = 'Git',
+  HTML = 'HTML',
+  JAVASCRIPT = 'JavaScript',
+  LARAVEL = 'Laravel',
+  LINUX = 'Linux',
+  NEXTJS = 'Next.js',
+  NODEJS = 'Node.js',
+  PHP = 'PHP',
+  REACT = 'React',
+  TAILWIND = 'Tailwind CSS',
+  TYPESCRIPT = 'TypeScript',
+}
