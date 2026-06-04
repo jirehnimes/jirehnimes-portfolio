@@ -13,7 +13,7 @@ export const MobileDisplay = ({ url }: TProps) => {
           src={url}
           className={styles['mobile__iframe']}
           title="Mobile preview"
-          sandbox="allow-scripts allow-same-origin allow-forms"
+          sandbox="allow-scripts allow-same-origin"
         />
       </div>
       <div className={styles['mobile__home']} />

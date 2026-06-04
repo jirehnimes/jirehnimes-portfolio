@@ -13,7 +13,7 @@ export const LaptopDisplay = ({ url }: TProps) => {
             src={url}
             className={styles['laptop__iframe']}
             title="Laptop preview"
-            sandbox="allow-scripts allow-same-origin allow-forms"
+            sandbox="allow-scripts allow-same-origin"
           />
         </div>
       </div>

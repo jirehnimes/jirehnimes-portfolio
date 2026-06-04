@@ -1,11 +1,11 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import Image from 'next/image';
+import { LaptopDisplay } from '@/components/laptop-display';
+import { MobileDisplay } from '@/components/mobile-display';
 import { TPortfolio } from '@/types/portfolio.type';
-import { LaptopDisplay } from './laptop-display/laptop-display';
-import { MobileDisplay } from './mobile-display/mobile-display';
 import styles from './index-portfolio-card-modal.module.css';
 
 type TProps = {
@@ -29,7 +29,11 @@ export const IndexPortfolioCardModal = ({ portfolio, onClose }: TProps) => {
   return createPortal(
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <button className={styles['close-button']} onClick={onClose} aria-label="Close">
+        <button
+          className={styles['close-button']}
+          onClick={onClose}
+          aria-label="Close"
+        >
           &#x2715;
         </button>
 
